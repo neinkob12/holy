@@ -1,0 +1,262 @@
+<title>Typ-Test Ergebnisseiten</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;600;800&family=Oswald:wght@500;700&family=IBM+Plex+Mono:wght@400;600&family=Unbounded:wght@600;900&display=swap">
+<style>
+/* Layout: Steuerleiste oben, darunter 3 Handy-Rahmen nebeneinander (am Handy untereinander) */
+:root {
+  --bg: #eef0f3; --fg: #15171c; --muted: #5d6370; --line: #d5d9e0; --chip: #ffffff;
+  --chad: #2f5bff; --alpha: #e3262f; --soy: #6f9c86; --gooner: #7a3cf0;
+  --f-ui: "Manrope", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121419; --fg: #eceef2; --muted: #9aa1ad; --line: #2a2e37; --chip: #1c1f26; color-scheme: dark } }
+:root[data-theme="dark"] { --bg: #121419; --fg: #eceef2; --muted: #9aa1ad; --line: #2a2e37; --chip: #1c1f26; color-scheme: dark }
+
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--fg); font-family: var(--f-ui); }
+.wrap { padding-block: 24px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); max-width: 1240px; margin: 0 auto; display: grid; gap: 20px }
+header h1 { margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -.01em }
+header p { margin: 4px 0 0; color: var(--muted); font-size: 14px }
+.controls { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center }
+.seg { display: flex; flex-wrap: wrap; gap: 4px; background: var(--chip); border: 1px solid var(--line); border-radius: 8px; padding: 3px }
+.seg button { font: 600 13px var(--f-ui); color: var(--muted); background: none; border: 0; padding: 7px 12px; border-radius: 6px; cursor: pointer }
+.seg button[aria-pressed="true"] { background: var(--fg); color: var(--bg) }
+.seg button:focus-visible, .btn:focus-visible { outline: 2px solid var(--chad); outline-offset: 2px }
+.lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600 }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; align-items: start }
+.col { display: grid; gap: 10px; min-width: 0 }
+.col h2 { margin: 0; font-size: 15px; font-weight: 800 }
+.col h2 span { color: var(--muted); font-weight: 600 }
+.phone { width: 100%; max-width: 380px; aspect-ratio: 9 / 18; border-radius: 28px; overflow: hidden; position: relative; border: 6px solid #0c0d10; box-shadow: 0 18px 40px -18px rgba(0,0,0,.45); justify-self: center }
+.screen { position: absolute; inset: 0; overflow-y: auto; scrollbar-width: none }
+.screen::-webkit-scrollbar { display: none }
+.toast { position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--fg); color: var(--bg); padding: 10px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; opacity: 0; transition: opacity .2s; pointer-events: none }
+.toast.on { opacity: 1 }
+
+/* gemeinsame Teile */
+.blur { filter: blur(7px); user-select: none }
+.btn { font: 700 14px var(--f-ui); border: 0; cursor: pointer; padding: 13px 14px; border-radius: 10px; width: 100% }
+
+/* ---------- 1. Clean und hell ---------- */
+.clean { background: #ffffff; color: #111318; font-family: "Manrope", sans-serif; padding: 26px 22px 28px; display: grid; gap: 18px; align-content: start }
+.clean .eyebrow { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #6b7280; font-weight: 600 }
+.clean .name { font-family: "Instrument Serif", Georgia, serif; font-size: 68px; line-height: .9; margin: 4px 0 0; color: var(--t) }
+.clean .quote { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: 22px; line-height: 1.2; margin: 0; text-wrap: balance }
+.clean .text { font-size: 13.5px; line-height: 1.6; color: #3f4450; margin: 0 }
+.clean .split { border-top: 1px solid #e5e7eb; padding-top: 16px; display: grid; gap: 10px; position: relative }
+.clean .row { display: grid; grid-template-columns: 64px 1fr 36px; gap: 10px; align-items: center; font-size: 12px; font-weight: 600 }
+.clean .bar { height: 6px; background: #f0f1f4; border-radius: 3px; overflow: hidden }
+.clean .bar i { display: block; height: 100%; background: var(--c) }
+.clean .num { text-align: right; font-variant-numeric: tabular-nums }
+.clean .lock { position: absolute; inset: 16px 0 0; display: grid; place-content: center; text-align: center; gap: 4px; font-size: 13px }
+.clean .lock b { font-size: 14px }
+.clean .lock span { color: #6b7280; max-width: 230px; line-height: 1.4 }
+.clean .actions { display: grid; gap: 8px }
+.clean .primary { background: #111318; color: #fff }
+.clean .ghostrow { display: grid; grid-template-columns: 1fr 1fr; gap: 8px }
+.clean .ghost { background: #f3f4f6; color: #111318 }
+.clean .friends { display: grid; gap: 8px; border-top: 1px solid #e5e7eb; padding-top: 16px }
+.clean .friend { display: flex; justify-content: space-between; font-size: 13px }
+.clean .friend em { font-style: normal; font-weight: 700; color: var(--c) }
+
+/* ---------- 2. Trading Card ---------- */
+.cardbg { background: radial-gradient(120% 80% at 50% 0%, #23262f 0%, #0b0c10 70%); color: #f2f2f2; padding: 22px 18px 26px; display: grid; gap: 16px; align-content: start; font-family: "Manrope", sans-serif }
+.tcard { position: relative; border-radius: 16px; padding: 3px; background: linear-gradient(140deg, var(--t), #ffffff 45%, var(--t) 60%, #111 100%) }
+.tcard .inner { border-radius: 13px; background: linear-gradient(180deg, #16181f, #0e0f14); padding: 14px; display: grid; gap: 12px; overflow: hidden; position: relative }
+.tcard .inner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,.10) 45%, transparent 60%); animation: shine 4.5s ease-in-out infinite; pointer-events: none }
+@keyframes shine { 0%,100% { transform: translateX(-60%) } 50% { transform: translateX(60%) } }
+.tcard .top { display: flex; justify-content: space-between; align-items: baseline; font-family: "IBM Plex Mono", monospace; font-size: 10.5px; color: #9aa0ab; letter-spacing: .06em }
+.tcard .art { aspect-ratio: 4 / 3; max-width: 100%; border-radius: 8px; background: radial-gradient(circle at 50% 38%, var(--t) 0%, transparent 62%), repeating-linear-gradient(45deg, rgba(255,255,255,.04) 0 6px, transparent 6px 12px), #0a0b0f; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.08) }
+.tcard .mono { font-family: "Oswald", sans-serif; font-weight: 700; font-size: 92px; line-height: 1; color: #fff; text-shadow: 0 6px 30px rgba(0,0,0,.6) }
+.tcard .title { font-family: "Oswald", sans-serif; font-weight: 700; font-size: 40px; line-height: 1; letter-spacing: .02em; text-transform: uppercase; margin: 0 }
+.tcard .quote { font-size: 12.5px; line-height: 1.45; color: #c9ccd3; margin: 0; font-style: italic }
+.tcard .stats { display: grid; gap: 7px; position: relative }
+.tcard .stat { display: grid; grid-template-columns: 62px 1fr 30px; gap: 8px; align-items: center; font-family: "IBM Plex Mono", monospace; font-size: 11px; text-transform: uppercase }
+.tcard .pip { height: 8px; background: rgba(255,255,255,.08); border-radius: 2px; overflow: hidden }
+.tcard .pip i { display: block; height: 100%; background: var(--c) }
+.tcard .stat b { text-align: right; font-variant-numeric: tabular-nums }
+.tcard .lock { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; gap: 2px }
+.tcard .lock span { color: #9aa0ab; text-transform: none; letter-spacing: 0; font-family: "Manrope", sans-serif; font-size: 12px }
+.cardbg .text { font-size: 13px; line-height: 1.6; color: #b8bcc6; margin: 0 }
+.cardbg .actions { display: grid; gap: 8px }
+.cardbg .primary { background: var(--t); color: #fff }
+.cardbg .ghostrow { display: grid; grid-template-columns: 1fr 1fr; gap: 8px }
+.cardbg .ghost { background: rgba(255,255,255,.08); color: #f2f2f2 }
+
+/* ---------- 3. Wrapped ---------- */
+.wr { position: absolute; inset: 0; background: var(--t); color: #fff; font-family: "Unbounded", "Arial Black", sans-serif; overflow: hidden; cursor: pointer; user-select: none }
+.wr .bars { position: absolute; top: 12px; left: 12px; right: 12px; display: flex; gap: 4px; z-index: 3 }
+.wr .bars i { flex: 1; height: 3px; border-radius: 2px; background: rgba(255,255,255,.35); overflow: hidden }
+.wr .bars i.done { background: #fff }
+.wr .slide { position: absolute; inset: 0; padding: 48px 22px 26px; display: grid; align-content: center; gap: 14px; opacity: 0; transform: translateY(14px); transition: opacity .45s, transform .45s; pointer-events: none }
+.wr .slide.on { opacity: 1; transform: none; pointer-events: auto }
+.wr .blob { position: absolute; border-radius: 50%; background: #000; opacity: .16 }
+.wr .b1 { width: 320px; height: 320px; right: -120px; top: -80px }
+.wr .b2 { width: 220px; height: 220px; left: -90px; bottom: -60px; background: #fff; opacity: .12 }
+.wr .small { font-family: "Manrope", sans-serif; font-weight: 600; font-size: 15px; line-height: 1.4; margin: 0; text-wrap: balance }
+.wr .big { font-weight: 900; font-size: 46px; line-height: .95; margin: 0; letter-spacing: -.02em; text-wrap: balance }
+.wr .huge { font-weight: 900; font-size: 64px; line-height: .9; margin: 0; letter-spacing: -.03em; word-break: break-word }
+.wr .count { font-weight: 900; font-size: 110px; line-height: .85; margin: 0 }
+.wr .wsplit { display: grid; gap: 12px; position: relative }
+.wr .wrow { display: grid; gap: 4px }
+.wr .wrow .h { display: flex; justify-content: space-between; font-size: 14px; font-weight: 600 }
+.wr .wrow .h b { font-variant-numeric: tabular-nums }
+.wr .wrow .t { height: 14px; background: rgba(0,0,0,.2); border-radius: 7px; overflow: hidden }
+.wr .wrow .t i { display: block; height: 100%; background: #fff; border-radius: 7px }
+.wr .lock { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; gap: 6px }
+.wr .lock b { font-size: 18px }
+.wr .lock span { font-family: "Manrope", sans-serif; font-weight: 600; font-size: 13px; max-width: 240px }
+.wr .actions { display: grid; gap: 8px; font-family: "Manrope", sans-serif }
+.wr .primary { background: #fff; color: #111 }
+.wr .ghost { background: rgba(0,0,0,.22); color: #fff }
+.wr .hint { position: absolute; bottom: 12px; left: 0; right: 0; text-align: center; font: 600 11px "Manrope", sans-serif; opacity: .7; z-index: 3 }
+
+@media (prefers-reduced-motion: reduce) { .tcard .inner::after { animation: none } .wr .slide { transition: none } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Ergebnisseite: 3 Entwürfe</h1>
+    <p>Gleicher Inhalt, drei Stile. Typ und Freischalt-Zustand oben umschalten. Alle Werte sind Beispiele.</p>
+  </header>
+
+  <div class="controls">
+    <div><div class="lbl">Typ</div>
+      <div class="seg" id="typeSeg" role="group" aria-label="Typ wählen">
+        <button id="t-chad" data-t="chad" aria-pressed="true">Chad</button>
+        <button id="t-alpha" data-t="alpha" aria-pressed="false">Alpha</button>
+        <button id="t-soy" data-t="soy" aria-pressed="false">SoyBoy</button>
+        <button id="t-gooner" data-t="gooner" aria-pressed="false">Gooner</button>
+      </div>
+    </div>
+    <div><div class="lbl">Split</div>
+      <div class="seg" id="lockSeg" role="group" aria-label="Freischalt-Zustand">
+        <button id="l-on" data-l="1" aria-pressed="true">Gesperrt</button>
+        <button id="l-off" data-l="0" aria-pressed="false">Freigeschaltet</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <section class="col"><h2>1. Clean und hell <span>· ruhig, wie ein seriöser Test</span></h2><div class="phone"><div class="screen" id="s1"></div></div></section>
+    <section class="col"><h2>2. Trading Card <span>· Sammelkarte mit Werten</span></h2><div class="phone"><div class="screen" id="s2"></div></div></section>
+    <section class="col"><h2>3. Wrapped <span>· antippen für nächste Seite</span></h2><div class="phone"><div class="screen" id="s3"></div></div></section>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const TYPES = {
+  chad:   { name: "Chad",   color: "var(--chad)",
+    quote: "Andere suchen das Rampenlicht. Dich findet es von allein.",
+    text: "Wenn du einen Raum betrittst, wird es kurz still. Nicht weil du laut bist, sondern weil alle spüren, dass gerade jemand angekommen ist. Du jagst nichts hinterher. Die Dinge kommen zu dir, und du entscheidest in aller Ruhe, was davon bleiben darf. Andere nennen das Glück. Für dich ist es ein ganz normaler Tag.",
+    split: { chad: 58, alpha: 21, soy: 13, gooner: 8 } },
+  alpha:  { name: "Alpha",  color: "var(--alpha)",
+    quote: "Andere warten auf ihre Chance. Du nimmst sie dir.",
+    text: "Du bist nicht Teil der Gruppe. Du bist der Grund, warum es sie gibt. Jeder Raum ist ein Revier, jedes Gespräch ein Duell, jeder Tag eine Schlacht, die gewonnen werden will. Ruhe kennst du nur vom Hörensagen. Und genau deshalb vergisst niemand deinen Namen. Ob er will oder nicht.",
+    split: { chad: 24, alpha: 54, soy: 7, gooner: 15 } },
+  soy:    { name: "SoyBoy", color: "var(--soy)",
+    quote: "Die Welt braucht Helden. Und jemanden, der danach aufräumt.",
+    text: "Du bist der, der bleibt, wenn alle anderen längst gegangen sind. Kein Drama, kein Risiko, keine Szene. Während andere Geschichte schreiben, liest du sie. Leise, pünktlich, gewissenhaft. Es gibt niemanden, auf den man sich mehr verlassen kann. Es gibt nur leider auch niemanden, der es bemerkt.",
+    split: { chad: 12, alpha: 6, soy: 61, gooner: 21 } },
+  gooner: { name: "Gooner", color: "var(--gooner)",
+    quote: "Die Welt dreht sich weiter. Nur eben ohne dich.",
+    text: "Irgendwo hinter verschlossenen Rollläden brennt ein einsames Licht. Dort sitzt du. Tage verschwimmen, Nächte werden zu Morgen, und die Welt da draußen ist nur noch ein Gerücht. Du hast dir dein eigenes Reich gebaut. Es ist klein, es ist dunkel, und niemand kommt rein. Genau so, wie du es willst.",
+    split: { chad: 5, alpha: 11, soy: 19, gooner: 65 } }
+};
+const ORDER = ["chad", "alpha", "soy", "gooner"];
+const FRIENDS = [["Leon", "alpha"], ["Mo", "chad"], ["Jonas", "gooner"]];
+const ID = "k7x2p9";
+let cur = "chad", locked = true, slide = 0;
+
+const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const sorted = t => ORDER.slice().sort((a, b) => TYPES[t].split[b] - TYPES[t].split[a]);
+
+function toast(msg) {
+  const el = document.getElementById("toast");
+  el.textContent = msg; el.classList.add("on");
+  clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove("on"), 1600);
+}
+
+function clean(t) {
+  const T = TYPES[t];
+  const rows = sorted(t).map(k => `<div class="row" style="--c:${TYPES[k].color}"><span>${TYPES[k].name}</span><div class="bar"><i style="width:${T.split[k]}%"></i></div><span class="num">${T.split[k]}%</span></div>`).join("");
+  const friends = FRIENDS.map(([n, k]) => `<div class="friend" style="--c:${TYPES[k].color}"><span>${n}</span><em>${TYPES[k].name}</em></div>`).join("");
+  return `<div class="clean" style="--t:${T.color}">
+    <div><div class="eyebrow">Dein Ergebnis</div><h3 class="name">${T.name}</h3></div>
+    <p class="quote">„${esc(T.quote)}“</p>
+    <p class="text">${esc(T.text)}</p>
+    <div class="split"><div class="${locked ? "blur" : ""}" style="display:grid;gap:10px">${rows}</div>
+      ${locked ? `<div class="lock"><b>Dein voller Split ist gesperrt</b><span>Schick deinen Link an jemanden. Sobald er ihn öffnet, ist alles frei.</span></div>` : ""}</div>
+    <div class="actions"><button class="btn primary" data-act="share">Link teilen</button>
+      <div class="ghostrow"><button class="btn ghost" data-act="story">Story-Bild</button><button class="btn ghost" data-act="copy">Link kopieren</button></div></div>
+    ${locked ? "" : `<div class="friends"><div class="eyebrow">Über deinen Link</div>${friends}</div>`}
+  </div>`;
+}
+
+function card(t) {
+  const T = TYPES[t];
+  const stats = sorted(t).map(k => `<div class="stat" style="--c:${TYPES[k].color}"><span>${TYPES[k].name}</span><div class="pip"><i style="width:${T.split[k]}%"></i></div><b>${T.split[k]}</b></div>`).join("");
+  return `<div class="cardbg" style="--t:${T.color}">
+    <div class="tcard"><div class="inner">
+      <div class="top"><span>TYP-TEST · 2026</span><span>#${ID}</span></div>
+      <div class="art"><span class="mono">${T.name[0]}</span></div>
+      <h3 class="title">${T.name}</h3>
+      <p class="quote">„${esc(T.quote)}“</p>
+      <div class="stats"><div class="${locked ? "blur" : ""}" style="display:grid;gap:7px">${stats}</div>
+        ${locked ? `<div class="lock">🔒 Gesperrt<span>Link öffnen lassen zum Aufdecken</span></div>` : ""}</div>
+    </div></div>
+    <p class="text">${esc(T.text)}</p>
+    <div class="actions"><button class="btn primary" data-act="share">Karte teilen</button>
+      <div class="ghostrow"><button class="btn ghost" data-act="story">Story-Bild</button><button class="btn ghost" data-act="copy">Link kopieren</button></div></div>
+  </div>`;
+}
+
+function wrapped(t) {
+  const T = TYPES[t];
+  const rows = sorted(t).map(k => `<div class="wrow"><div class="h"><span>${TYPES[k].name}</span><b>${T.split[k]}%</b></div><div class="t"><i style="width:${T.split[k]}%"></i></div></div>`).join("");
+  const slides = [
+    `<p class="small">Wir haben jede deiner Antworten ausgewertet.</p><p class="count">36</p><p class="big">Antworten. Ein Urteil.</p>`,
+    `<p class="small">Bereit? Du bist ein ...</p><p class="huge">${T.name}</p>`,
+    `<p class="big">„${esc(T.quote)}“</p>`,
+    `<p class="small" style="font-size:14px;line-height:1.55">${esc(T.text)}</p>`,
+    `<p class="small">Dein voller Split</p><div class="wsplit"><div class="${locked ? "blur" : ""}" style="display:grid;gap:12px">${rows}</div>
+      ${locked ? `<div class="lock"><b>Noch geheim</b><span>Einer muss deinen Link öffnen. Dann siehst du alles.</span></div>` : ""}</div>`,
+    `<p class="big">Was sind deine Freunde?</p><div class="actions"><button class="btn primary" data-act="share">Link teilen</button><button class="btn ghost" data-act="story">Story-Bild</button><button class="btn ghost" data-act="copy">Link kopieren</button></div>`
+  ];
+  const bars = slides.map((_, i) => `<i class="${i <= slide ? "done" : ""}"></i>`).join("");
+  return `<div class="wr" style="--t:${T.color}" id="wr">
+    <div class="blob b1"></div><div class="blob b2"></div>
+    <div class="bars">${bars}</div>
+    ${slides.map((s, i) => `<div class="slide ${i === slide ? "on" : ""}">${s}</div>`).join("")}
+    <div class="hint">${slide < slides.length - 1 ? "Tippen für weiter" : "Tippen für Neustart"}</div>
+  </div>`;
+}
+
+function render() {
+  document.getElementById("s1").innerHTML = clean(cur);
+  document.getElementById("s2").innerHTML = card(cur);
+  document.getElementById("s3").innerHTML = wrapped(cur);
+}
+
+document.getElementById("typeSeg").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  cur = b.dataset.t; slide = 0;
+  document.querySelectorAll("#typeSeg button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  render();
+});
+document.getElementById("lockSeg").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  locked = b.dataset.l === "1";
+  document.querySelectorAll("#lockSeg button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  render();
+});
+document.addEventListener("click", e => {
+  const a = e.target.closest("[data-act]");
+  if (a) { e.stopPropagation(); toast({ share: "Teilen-Menü (nur Entwurf)", story: "Story-Bild 9:16 (nur Entwurf)", copy: "Link kopiert (nur Entwurf)" }[a.dataset.act]); return; }
+  if (e.target.closest("#wr")) { slide = (slide + 1) % 6; document.getElementById("s3").innerHTML = wrapped(cur); }
+});
+render();
+</script>
