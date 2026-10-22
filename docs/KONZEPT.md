@@ -17,7 +17,7 @@ Halb ernster Persönlichkeitstest auf Deutsch für Jungs von 16 bis 25. Webseite
 | Ergebnis | Haupttyp groß. Der volle Prozent-Split ist verschwommen, bis jemand deinen Link öffnet |
 | Ergebnistext | Kurz, ein Spruch plus ein paar Zeilen, ohne Tipps |
 | Vergleich | Du siehst, welche Typen deine Freunde sind, die über deinen Link kamen |
-| Design | 3 Entwürfe zum Vergleichen: Clean und hell, Trading Card, Spotify-Wrapped-Stil |
+| Design | Wrapped-Story in Anthrazit, Karte als Viereck ohne Füllung (Entwürfe in `prototypes/`) |
 
 ## Die 4 Typen
 
@@ -42,16 +42,16 @@ Gerät erkennen: zufällige Geräte-ID im Browser-Speicher. Eigener Link auf eig
 
 ## Technik (Vorschlag)
 
-- Vite + TypeScript, eine Seite, keine schwere Bibliothek.
+- Vite + TypeScript, eine Seite, kein Framework.
 - Vercel Functions als API, Upstash Redis (Free Plan) als Speicher.
 - Redis-Schlüssel: `result:<id>` (Typ, Split, Geräte-ID), `visits:<id>` (Set mit Geräte-IDs), `friends:<id>` (Ergebnis-IDs der Freunde).
 - Story-Bild wird im Browser per Canvas erzeugt.
 
 ## Reihenfolge
 
-1. Fragenkatalog aussortieren (`docs/FRAGEN.md`). Erledigt.
-2. Ergebnistexte für die 4 Typen (`docs/ERGEBNISSE.md`). Entwurf steht.
-3. 3 Design-Entwürfe der Ergebnisseite. **Jetzt dran.**
-4. Test-Ablauf bauen.
-5. Teilen und Freischalten mit Upstash.
-6. Deployment auf Vercel.
+1. Fragenkatalog (`docs/FRAGEN.md`). Erledigt.
+2. Ergebnistexte (`docs/ERGEBNISSE.md`). Erledigt.
+3. Design: Wrapped in Anthrazit, Karte als Viereck ohne Füllung. Erledigt.
+4. Test, Teilen, Freischalten mit Upstash. Erledigt, siehe `README.md`.
+5. Deployment auf Vercel. **Jetzt dran.**
+6. Bilder für die Bildfragen A01 und A02 (laufen bis dahin als Text).
