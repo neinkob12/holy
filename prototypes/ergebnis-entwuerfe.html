@@ -134,7 +134,6 @@ button:focus-visible { outline: 2px solid var(--chad); outline-offset: 2px }
 
 /* Split: Karte plus farbige Balken */
 .wsplit { position: relative }
-.wsplit .inner { display: grid; gap: 6cqw }
 .bars4 { display: grid; gap: 2.8cqw }
 .wrow { display: grid; gap: 1.4cqw }
 .wrow .h { display: flex; justify-content: space-between; font-size: 4.4cqw; font-weight: 600 }
@@ -166,12 +165,14 @@ button:focus-visible { outline: 2px solid var(--chad); outline-offset: 2px }
 @keyframes ping { from { transform: scale(.4); opacity: .8 } to { transform: scale(1.6); opacity: 0 } }
 .blur { filter: blur(2.2cqw) }
 .lock { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; gap: 2cqw }
-.lock b { font-size: 6cqw }
+.lock b { font-size: 5cqw }
 .lock span { font-family: var(--f-ui); font-weight: 600; font-size: 4cqw; max-width: 70cqw; line-height: 1.4; justify-self: center }
 
 /* Teilen */
 .actions { display: grid; gap: 2.4cqw; font-family: var(--f-ui) }
-.btn { font: 800 4.4cqw var(--f-ui); border: 0; cursor: pointer; padding: 3.8cqw; border-radius: 3cqw; width: 100% }
+.btn { font: 800 4.4cqw var(--f-ui); border: 0; cursor: pointer; padding: 3.8cqw; border-radius: 3cqw; width: 100%; display: flex; align-items: center; justify-content: center; gap: 2.4cqw }
+.btn svg { width: 5.2cqw; height: 5.2cqw; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; flex: none }
+.oneline { white-space: nowrap; font-size: 6.4cqw }
 .primary { background: var(--btnbg); color: var(--btnfg) }
 .wr[data-chrome="light"] .primary { background: var(--chrome-box); color: #15171c }
 .ghost { background: var(--box); color: var(--ink); border: 1px solid var(--boxline) }
@@ -282,6 +283,12 @@ function toast(msg) {
   clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove("on"), 1600);
 }
 
+const svg = d => `<svg viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
+const ICON = {
+  share: svg(`<path d="M12 3v12M7 8l5-5 5 5M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/>`),
+  story: svg(`<rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/>`),
+  copy: svg(`<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/>`)
+};
 const WAVE = `<svg class="wave" viewBox="0 0 400 40" preserveAspectRatio="none"><path d="M0 20 Q25 0 50 20 T100 20 T150 20 T200 20 T250 20 T300 20 T350 20 T400 20"/></svg>`;
 const SPARKS = [[80, 16, 0], [18, 74, 2.5]]
   .map(([x, y, d]) => `<i class="spark" style="left:${x}%;top:${y}%;animation-delay:${d}s"></i>`).join("");
@@ -299,12 +306,12 @@ function slideHtml(t, s) {
     case 3: {
       const [x, y] = spot(t);
       const corner = (k, cls) => `<span class="c ${cls}" style="--c:var(--${k})">${TYPES[k].name}</span>`;
-      return `<p class="small">Dein voller Split</p><div class="wsplit" style="--d:1"><div class="inner${locked ? " blur" : ""}">
-        <div class="map">${corner("chad", "tl")}${corner("alpha", "tr")}${corner("soy", "bl")}${corner("gooner", "br")}<i class="me" style="left:${x}%;top:${y}%"></i></div>
-        <div class="bars4">${sorted(t).map((k, i) => `<div class="wrow" style="--c:var(--${k})"><div class="h"><span><i class="dot"></i>${TYPES[k].name}</span><b>${T.split[k]}%</b></div><div class="t"><i style="width:${T.split[k]}%;--i:${i}"></i></div></div>`).join("")}</div>
-      </div>${locked ? `<div class="lock"><b>Noch geheim</b><span>Einer muss deinen Link öffnen. Dann siehst du alles.</span></div>` : ""}</div>`;
+      return `<p class="small">Dein voller Split</p>
+        <div class="map" style="--d:1">${corner("chad", "tl")}${corner("alpha", "tr")}${corner("soy", "bl")}${corner("gooner", "br")}<i class="me" style="left:${x}%;top:${y}%"></i></div>
+        <div class="wsplit" style="--d:2"><div class="bars4${locked ? " blur" : ""}">${sorted(t).map((k, i) => `<div class="wrow" style="--c:var(--${k})"><div class="h"><span><i class="dot"></i>${TYPES[k].name}</span><b>${T.split[k]}%</b></div><div class="t"><i style="width:${T.split[k]}%;--i:${i}"></i></div></div>`).join("")}</div>
+        ${locked ? `<div class="lock"><b>Prozente gesperrt</b><span>Einer muss deinen Link öffnen.</span></div>` : ""}</div>`;
     }
-    default: return `<p class="big disp">Was sind deine Freunde?</p><div class="actions" style="--d:1"><button class="btn primary" data-act="share">Link teilen</button><button class="btn ghost" data-act="story">Story-Bild</button><button class="btn ghost" data-act="copy">Link kopieren</button></div>`;
+    default: return `<p class="big disp oneline">Schalte alles frei:</p><div class="actions" style="--d:1"><button class="btn primary" data-act="share">${ICON.share}Link teilen</button><button class="btn ghost" data-act="story">${ICON.story}Story-Bild</button><button class="btn ghost" data-act="copy">${ICON.copy}Link kopieren</button></div>`;
   }
 }
 
