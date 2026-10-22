@@ -85,12 +85,6 @@ C = Chad, A = Alpha, S = SoyBoy, G = Gooner. Im Test wird die Reihenfolge der An
 - S: Schreibt mit
 - G: „Welches Gruppenprojekt?“
 
-### Q08 Wo bist du im Club?
-- C: An der Theke
-- A: Toilette 😉
-- S: Lieber zuhause
-- G: Am Dancen
-
 ### Q09 Wo verbringst du am meisten Zeit?
 - C: Claude
 - A: Instagram
@@ -287,13 +281,12 @@ Aus jeder Gruppe kommt höchstens **eine** Frage in denselben Test.
 | Essen | Q03, Q16 | Pizza bei G in beiden |
 | Apps | Q09, Q25 | beide fragen nach Apps |
 | Hobbys | Q04, Q24 | Sport und Hobbys überschneiden sich |
-| Wochenende | Q08, Q19 | Club bei A in beiden |
 | Filme | N04, N05 | Film und Serie fast gleich |
 
 ## Zählung (final)
 
 | | Anzahl |
 |---|---|
-| Fragen gesamt | 43 |
+| Fragen gesamt | 42 (Q08 gestrichen) |
 | Langer Test | 36 (je Überlappungsgruppe eine Frage, ca. 7 Min) |
 | Schneller Test | 10, zufällig gezogen, ohne Überlappungen |
