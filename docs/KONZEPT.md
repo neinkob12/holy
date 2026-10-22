@@ -21,10 +21,12 @@ Halb ernster Persönlichkeitstest auf Deutsch für Jungs von 16 bis 25. Webseite
 
 ## Die 4 Typen
 
-- **Chad**: mühelos selbstbewusst, entspannt, Aura ohne Anstrengung.
-- **Alpha**: dominant, Hustle, Kontrolle, Wettbewerb, laut.
-- **SoyBoy**: übertrieben lieb, konfliktscheu, Fandom und Konsum, Mund offen auf Fotos.
-- **Gooner**: lebt am Bildschirm, nachtaktiv, Zimmer mit Rollladen unten, null Disziplin.
+- **Chad**: stilvoll, entspannt, souverän. Anzug, BMW, Steak medium, Kurzurlaub, Champagner. Sein Idol ist er selbst.
+- **Alpha**: laut und protzig. Gucci-Cap, AMG, Marlboro Rot, Dubai, Rap, Club, Kampfsport.
+- **SoyBoy**: Standard und zurückhaltend, eher unterwürfig und langweilig. Normale Haare, weißes Shirt, Jeans, Stofftasche, Fahrrad, Radler, Bio-Markt.
+- **Gooner**: zockt nur, viel Bildschirmzeit, macht mit niemandem was, hängt vor dem PC. Zottelige Haare mit etwas Ausfall, Discord, Reddit, Monster, E-Roller.
+
+Antworten nicht zu extrem formulieren. Jede Antwort soll so klingen, dass sich jemand wirklich dafür entscheiden würde.
 
 ## Freischalten durch echtes Teilen
 

@@ -1,476 +1,344 @@
-# Fragenkatalog (Rohfassung zum Aussortieren)
+# Fragenkatalog
 
-Bewusst mehr Fragen als nötig. Wir brauchen am Ende 10 für den schnellen Test und 40 für den langen.
+C = Chad, A = Alpha, S = SoyBoy, G = Gooner. Im Test wird die Reihenfolge der Antworten gemischt.
+🖼️ = Bildfrage (4 Bilder statt Text). 🆕 = neuer Vorschlag, noch nicht abgesegnet.
 
-**So lesen:**
-- C = Chad, A = Alpha, S = SoyBoy, G = Gooner. Im Test wird die Reihenfolge gemischt, die Buchstaben sieht niemand.
-- ⭐ = Vorschlag für den schnellen 2-Min-Test.
-- 🖼️ = Bildfrage: 4 Bilder statt 4 Texte. Beschrieben ist, was auf dem Bild zu sehen sein soll.
-- Zum Aussortieren einfach durchstreichen oder in eine Liste schreiben, z.B. „raus: D05, B12“.
+**Regel:** Fragen aus derselben Überlappungsgruppe (siehe unten) kommen nie zusammen in einen Test.
 
 ---
 
-## 1. Aussehen und Kleidung (A)
+## Aussehen
 
-### 🖼️ ⭐ A01 Welcher Haarschnitt bist du?
-- C: Mittellang, leicht zerzaust, fällt locker nach hinten (Flow, sieht mühelos aus)
-- A: Frischer Skin Fade, oben kurz und exakt, scharfe Konturen
-- S: Undercut mit Dutt oder Mittelscheitel, dazu gepflegter Hipster-Bart und runde Brille
-- G: Zotteliger Pilz, ungekämmt, Haare im Gesicht, fettiger Ansatz
+### 🖼️ A01 Welcher Haarschnitt bist du?
+- C: Mittellang, locker nach hinten (Flow)
+- A: Frischer Skin Fade, scharfe Konturen
+- S: Ganz normaler Standard-Kurzhaarschnitt
+- G: Zottelig, mit etwas Haarausfall
 
-### 🖼️ ⭐ A02 Welches Outfit ziehst du heute an?
-- C: Weißes T-Shirt, gerade Jeans, saubere weiße Sneaker
-- A: Hemd mit Kragen, Chino, Lederschuhe, Uhr
-- S: Grafik-Shirt mit Spruch, Cargo-Shorts, Totebag, Crocs
-- G: Grauer Hoodie mit Flecken, Jogginghose, Socken in Badelatschen
+### 🖼️ A02 Welches Outfit ziehst du an?
+- C: Anzug
+- A: Designer-Outfit mit Gucci-Cap
+- S: Weißes Shirt, Jeans, lange Stofftasche
+- G: Hoodie und Jogginghose
 
-### 🖼️ A03 Welche Schuhe stehen bei dir vor der Tür?
-- C: Klassische weiße Ledersneaker
-- A: Glänzende Lederschuhe oder limitierte Sneaker im Karton
-- S: Bunte Crocs mit Anstecker-Pins
-- G: Ausgelatschte Badelatschen
+### A03 Welche Schuhe würdest du anziehen?
+- C: Elegante Lederschuhe
+- A: Limitierte Designer-Sneaker
+- S: Graue New Balance
+- G: Badelatschen mit Socken
 
-### 🖼️ A04 Welcher Bart?
-- C: Leichter 3-Tage-Bart
-- A: Perfekt getrimmter Vollbart mit scharfer Linie
-- S: Langer gepflegter Bart, dazu Brille
-- G: Flaumiger Teenie-Schnurrbart, ungleichmäßig
+### A04 Welcher Bart?
+- C: 3-Tage-Bart
+- A: Getrimmter Vollbart mit Übergang
+- S: Nur Schnauzer
+- G: Flaum
 
-### 🖼️ A05 Welches Foto wäre dein Profilbild?
-- C: Zufälliger Schnappschuss von Freunden, lachend am See
-- A: Anzug, vor einem Sportwagen, ernster Blick
-- S: Mund weit offen, zeigt auf ein Marvel-Poster
-- G: Ein Anime-Charakter, kein echtes Gesicht
-
-### 🖼️ A06 Welche Pose auf Fotos?
-- C: Leichtes Grinsen, Hände in der Tasche
-- A: Kinn hoch, Arme verschränkt, Blick von unten
-- S: Soyface: Mund offen, Augen groß, beide Daumen hoch
-- G: Halb abgeschnitten im Hintergrund, Bildschirmlicht im Gesicht
-
-### A07 Wie lange brauchst du morgens im Bad?
-- C: 5 Minuten, sieht trotzdem gut aus
-- A: 30 Minuten, feste Routine, Hautpflege, Haare, Parfum
-- S: 20 Minuten, davon 15 für den Bart-Öl-Content
-- G: Bad? Heute ist kein Badtag
-
-### A08 Parfum?
-- C: Ein Duft seit Jahren, alle fragen, was das ist
-- A: Drei teure Flaschen, der Name muss bekannt sein
-- S: Vanille-Kokos-Bodyspray
-- G: Axe. Sehr viel Axe
-
-### A09 Wie oft gehst du zum Friseur?
-- C: Wenn es auffällt. Fällt aber nie schlecht aus
-- A: Jeden Freitag, fester Termin beim Barber
-- S: Alle 6 Wochen, mit Pinterest-Board auf dem Handy
-- G: Mama schneidet. Oder keiner
-
-### A10 Accessoires?
-- C: Eine schlichte Kette, das reicht
-- A: Uhr. Große Uhr
-- S: Totebag, Armbänder vom Festival, Brille ohne Stärke
-- G: Gaming-Headset um den Hals, auch draußen
-
-### A11 Haltung beim Gehen?
-- C: Locker, Schultern zurück, kein Stress
-- A: Brust raus, Blick nach vorne, Leute gehen zur Seite
-- S: Leicht gebückt, Kopfhörer drin, Blick aufs Handy
-- G: Gehen? Wann warst du zuletzt draußen?
-
-### A12 Deine Stimme?
-- C: Ruhig, tief, entspannt
-- A: So laut, dass der ganze Tisch zuhört
-- S: Wird hoch, wenn du dich freust, und du freust dich oft
-- G: Heiser, du hast heute noch nicht gesprochen
-
-### A13 Du betrittst einen Raum.
-- C: Leute drehen sich um, du weißt nicht warum
-- A: Du gibst jedem einen festen Händedruck
-- S: Du suchst zuerst die Ecke mit den Snacks
-- G: Du hoffst, dass dich keiner anspricht
-
-### A14 Jemand rempelt dich an.
-- C: „Alles gut, Bro.“ Weiter geht's
-- A: Du bleibst stehen und schaust, bis er sich entschuldigt
-- S: Du entschuldigst dich
-- G: Passiert nicht, du bist nie unter Menschen
+### A05 Dein Profilbild?
+- C: Du im Auto am Fahren
+- A: Du im AMG
+- S: Du auf dem Fahrrad
+- G: Du auf dem E-Roller oder im Bus
 
 ---
 
-## 2. Dating und Rizz (D)
+## Lifestyle
 
-### ⭐ D01 Blickkontakt mit ihr im Bus.
-- C: Du hältst den Blick, kurzes Lächeln, keine Panik
-- A: Du gehst direkt hin und fragst nach der Nummer
-- S: Du schaust weg und entschuldigst dich innerlich fürs Starren
-- G: Nicht gemerkt, Kopfhörer drin, Handy in der Hand
+### Q01 Welche Kippen rauchst du?
+- C: Keine
+- A: Marlboro Rot
+- S: Iqos
+- G: Vape
 
-### ⭐ D02 Sie antwortet seit 6 Stunden nicht.
-- C: Merkst du nicht, du hast ein Leben
-- A: Du schreibst nicht mehr, sie hatte ihre Chance
-- S: „alles okay bei dir? 🥺 kein Druck!!“
-- G: Du checkst alle 4 Minuten ihren Online-Status
+### Q02 Welche Automarke am ehesten?
+- C: BMW
+- A: Mercedes
+- S: Tesla
+- G: Monstertruck
 
-### D03 Erstes Date, wohin?
-- C: Spontan, Spaziergang, Eis, mal schauen
-- A: Du hast reserviert, du zahlst, du bestimmst
-- S: Hafermilch-Matcha im Pop-up-Store, danach Marvel im Kino
-- G: Bei dir, Netflix. Mehr Plan gibt es nicht
+### Q03 Welches Gericht am ehesten?
+- C: Geiles Steak, medium
+- A: Fast rohes Steak
+- S: Poke Bowl
+- G: Pizza
 
-### D04 Deine erste Nachricht?
-- C: „hey, dein Musikgeschmack ist kriminell gut“
-- A: „Freitag 20 Uhr. Bist du dabei?“
-- S: Drei Absätze darüber, wie sehr du ihre Grenzen respektierst
-- G: „hey“, nach zwei Wochen Profil stalken
+### Q04 Welchen Sport am ehesten?
+- C: Schwimmen
+- A: Kampfsport
+- S: Handball
+- G: E-Sport
 
-### D05 Dein Crush hat einen Freund.
-- C: Schade. Nächste
-- A: Du bist eh besser, das merkt sie schon
-- S: Du wirst ihr bester Freund. Für immer
-- G: Du kennst sein Insta besser als er selbst
+### Q05 Welcher Urlaubsort?
+- C: Ibiza
+- A: Dubai
+- S: Bali
+- G: Japan
 
-### D06 Sie sagt: „Du bist so ein netter Typ.“
-- C: Du lachst: „Nett bin ich nur heute“
-- A: Nett? Du bist ein Gewinner. Ihr Fehler
-- S: „Danke!! Du auch!! 🙏“
-- G: Du weißt, was das heißt, und gehst zurück zum Bildschirm
+### Q06 Wo kaufst du ein?
+- C: Rewe
+- A: Immer Restaurant
+- S: Bio-Markt
+- G: Kiosk
 
-### D07 Party, du kennst niemanden.
-- C: Nach 20 Minuten kennt dich jeder
-- A: Du stellst dich an die Bar, die Leute kommen zu dir
-- S: Du hilfst beim Aufräumen, damit du was zu tun hast
-- G: Du sitzt auf dem Klo und scrollst, bis du heim kannst
+### Q07 Deine Rolle im Gruppenprojekt?
+- C: Hat die Ideen
+- A: Kommandiert
+- S: Schreibt mit
+- G: „Welches Gruppenprojekt?“
 
-### D08 Du bekommst einen Korb.
-- C: „Alles gut, schönen Abend noch.“ Abgehakt
-- A: Ihr Verlust. Du erzählst es niemandem
-- S: Du entschuldigst dich zweimal für die Frage
-- G: Nie gefragt, also nie Korb. Big Brain
+### Q08 Wo bist du im Club?
+- C: An der Theke
+- A: Toilette 😉
+- S: Lieber zuhause
+- G: Am Dancen
 
-### ⭐ D09 Was ist dein Rizz?
-- C: Einfach da sein. Die Aura macht den Rest
-- A: Status, Geld, Selbstbewusstsein
-- S: Zuhören, validieren, Wholesome-Memes schicken
-- G: Rizz? Ich hab einen 240-Hertz-Monitor
+### Q09 Wo verbringst du am meisten Zeit?
+- C: Claude
+- A: Instagram
+- S: TikTok
+- G: Reddit
 
-### D10 Wie schnell antwortest du?
-- C: Wenn du Zeit hast. Mal 2 Minuten, mal 2 Stunden
-- A: Strategisch immer langsamer als sie
-- S: Sofort, mit 4 Emojis
-- G: Sofort, um 4 Uhr nachts, du warst eh wach
+### Q10 Welches Spaßgetränk am liebsten?
+- C: Wasser
+- A: Coke Zero
+- S: Matcha Latte
+- G: Monster
 
-### D11 Sie will dich ihren Freunden vorstellen.
-- C: Klar, wird lustig
-- A: Du übernimmst das Gespräch am Tisch
-- S: Du bereitest Smalltalk-Themen in den Notizen vor
-- G: Du sagst ab. Ausrede: krank
+### Q11 Das kaufst du beim Kiosk:
+- C: Kokoswasser
+- A: Kippen
+- S: Snickers
+- G: Haribo
 
-### D12 Valentinstag.
-- C: Kleine Geste, kein Kitsch
-- A: Großes Dinner, Rosen, sie soll es posten
-- S: Selbstgebasteltes Fotoalbum und ein Brief mit 8 Seiten
-- G: Ein normaler Dienstag
+### Q12 Hier schreibst du deinem Akh:
+- C: iMessage
+- A: WhatsApp
+- S: Signal
+- G: Discord
 
-### D13 Deine Ex schreibt „hey“.
-- C: Du liest es, lächelst, antwortest vielleicht morgen
-- A: Ignorieren. Sie weiß, was sie verloren hat
-- S: „hey!! wie geht's dir, ich hab oft an dich gedacht“
-- G: Screenshot an deine zwei Discord-Freunde
+### Q13 Der Kontrolleur kommt, du hast kein Ticket.
+- C: Nichts sagen, einfach weitergehen
+- A: Diskutieren
+- S: Bezahlen
+- G: Tut so, als ob er schläft
 
-### D14 Du merkst, dass sie auf dich steht.
-- C: Wusstest du schon
-- A: Natürlich. Jetzt entscheidest du
-- S: Unsicher, ob das okay ist. Du fragst Reddit
-- G: Glaubst du nicht. Das ist ein Bot
+### Q14 Wer ist dein Idol?
+- C: Du selbst
+- A: Ronaldo
+- S: Christian Wolff
+- G: Monte
 
----
+### Q15 Welche Musik hörst du am liebsten?
+- C: House
+- A: Rap
+- S: RnB
+- G: Phonk
 
-## 3. Bildschirmzeit und Internet (B)
+### Q16 Das nimmst du aus der Backwarenabteilung:
+- C: Nichts
+- A: Schokocroissant
+- S: Belegtes Brötchen
+- G: Pizzastück
 
-### ⭐ B01 Deine Bildschirmzeit pro Tag?
-- C: Nie geschaut. Wenig
-- A: 2 Stunden, nur Business, Trading, Podcasts
-- S: 6 Stunden, Reaction-Videos und Fandom
-- G: Die App zeigt einen Fehler, die Zahl ist zu groß
+### Q17 Was spielst du am liebsten? 🎮
+- C: Schach
+- A: UFC
+- S: FIFA
+- G: Valorant
 
-### ⭐ B02 3 Uhr nachts, was machst du?
-- C: Schlafen
-- A: Schlafen, um 5 klingelt der Wecker
-- S: Wikipedia-Rabbit-Hole über Dinosaurier
-- G: Du weißt genau, was du machst
+### Q18 Was machst du im Unterricht?
+- C: Nicht da
+- A: Macht Quatsch
+- S: Hört zu
+- G: Am Handy
 
-### B03 Was läuft auf deiner For You Page?
-- C: Random: Musik, Freunde, Urlaub
-- A: Grindset-Podcasts, Motivation, Krypto
-- S: Marvel-Trailer-Breakdowns und Wholesome-Videos
-- G: Das möchtest du niemandem zeigen
+### Q19 Was machst du am Wochenende?
+- C: Kurzurlaub
+- A: Club
+- S: Mit Freundin zuhause
+- G: Zocken
 
-### B04 Dein Lieblingsgame?
-- C: Fifa mit Kumpels, wenn überhaupt
-- A: Schach. Strategie
-- S: Animal Crossing
-- G: 4000 Stunden in einem Game, der Name ist egal
+### Q20 Wie kommst du von A nach B?
+- C: Uber
+- A: AMG, selbst gefahren
+- S: Fahrrad
+- G: E-Roller
 
-### B05 Neuer Marvel-Trailer kommt raus.
-- C: Ganz cool, vielleicht guck ich ihn
-- A: Kinderkram
-- S: Reaction-Video, Mund offen: „NO WAY“
-- G: Hast du schon vor 3 Tagen geleakt gesehen
+### Q21 Wie schnell antwortest du?
+- C: 1 Tag
+- A: Mindestens 15 Minuten
+- S: Sofort
+- G: Schreibt zuerst
 
-### B06 Handy-Akku bei 3 Prozent.
-- C: Egal, du bist eh unterwegs
-- A: Powerbank ist immer dabei
-- S: Panik, wie sollst du jetzt den Brunch posten
-- G: Lebensgefahr
+### Q22 Was machst du an Silvester?
+- C: Champagner
+- A: Böllern
+- S: Mit dem Hund
+- G: Zocken
 
-### B07 Handy beim Essen?
-- C: Liegt umgedreht auf dem Tisch
-- A: Nur für Business-Calls
-- S: Erst ein Foto fürs Story-Update
-- G: Lehnt an der Wasserflasche, Video läuft
+### Q23 Deine Bildschirmzeit pro Tag?
+- C: Unter 1 Stunde
+- A: 7 Stunden
+- S: 3 Stunden
+- G: Mehr als 7 Stunden
 
-### B08 Kommentierst du auf Social Media?
-- C: Selten. Wenn, dann ein Emoji
-- A: Du postest, andere kommentieren
-- S: Lange Kommentare, warum etwas problematisch ist
-- G: Anonymer Account, Kommentare um 4 Uhr nachts
+### Q24 Was sind deine Hobbys?
+- C: Sport
+- A: Auto fahren
+- S: Lesen
+- G: Zocken
 
-### B09 Dein Wochenende?
-- C: Freunde, See, Grillen, spontan
-- A: Gym, Meal Prep, Side-Business
-- S: Comic-Con oder Escape-Room
-- G: Zimmer. Rollladen unten
+### Q25 Zuletzt benutzte App?
+- C: Wetter
+- A: Tinder
+- S: Vinted
+- G: Inkognito-Tab
 
-### ⭐ B10 Wann hast du zuletzt Sonnenlicht gesehen?
-- C: Heute, war laufen
-- A: 5:30 Uhr, Workout zum Sonnenaufgang
-- S: Am Wochenende auf dem Flohmarkt
-- G: Meinst du den gelben Kreis?
+### Q26 Alkoholisches Getränk deiner Wahl?
+- C: Bier
+- A: Jacky-Cola (Dose)
+- S: Radler
+- G: Vodka-E
 
-### B11 Dein Handy-Hintergrund?
-- C: Foto mit Freunden
-- A: Lamborghini oder ein Zitat über Disziplin
-- S: Baby Yoda
-- G: Anime-Girl. Wir urteilen nicht. Doch
+### Q27 Jemand drängelt sich vor. Was machst du?
+- C: Lacht und stellt sich wieder davor
+- A: Regt sich auf und geht davor
+- S: Bleibt ruhig
+- G: Bestellt online (war nie im Supermarkt)
 
-### B12 Discord-Server?
-- C: Einer mit Kumpels, selten drin
-- A: Keiner, Zeitverschwendung
-- S: 14 Stück, alle Fandoms
-- G: Moderator von dreien
+### Q28 Du findest 1000 Euro in einem Portemonnaie.
+- C: Bringst es zurück
+- A: Neue Klamotten kaufen
+- S: Geld spenden
+- G: An einem Tag ausgeben
 
-### B13 Was hast du zuletzt gegoogelt?
-- C: Das Wetter
-- A: Einen Aktienkurs
-- S: „Ist es okay, wenn ich...“
-- G: Inkognito-Tab. Kein Kommentar
-
-### B14 24 Stunden ohne Handy?
-- C: Kein Problem, merkst du kaum
-- A: Challenge accepted, Dopamin-Detox
-- S: Unruhe, was du alles verpasst
-- G: Entzug nach 20 Minuten
-
----
-
-## 4. Konflikte (K)
-
-### ⭐ K01 Jemand beleidigt deinen Kumpel.
-- C: Du sagst ruhig „lass gut sein“, und er lässt gut sein
-- A: Du stellst dich davor. Laut
-- S: Du filmst und postest später, wie toxisch das war
-- G: Du warst nicht dabei
-
-### K02 Kritik vom Chef oder Lehrer.
-- C: Annehmen, besser machen, kein Drama
-- A: Diskutieren, bis er zugibt, dass er auch Fehler macht
-- S: Kurz auf dem Klo weinen, dann Danke-Mail
-- G: Warst eh nicht da
-
-### K03 Streit in der WhatsApp-Gruppe.
-- C: Ein Satz von dir, Ruhe ist
-- A: Sprachnachricht, 4 Minuten
-- S: „Leute, können wir bitte alle respektvoll bleiben ❤️“
-- G: Gruppe ist seit 2023 stumm
-
-### K04 Jemand drängelt sich vor.
-- C: „Bro, hinten ist die Schlange.“ Mit Lächeln
-- A: Du sagst es so, dass die Schlange klatscht
-- S: Du sagst nichts und regst dich 3 Tage auf
-- G: Online bestellt, keine Schlange
-
-### K05 Falsches Essen im Restaurant.
-- C: Isst du trotzdem, schmeckt auch
-- A: Zurückgehen lassen. Manager
-- S: Du isst es und gibst 20 Prozent Trinkgeld
-- G: Lieferando. Der Fahrer klingelt schon wieder
-
-### ⭐ K06 Du hast Unrecht.
-- C: „Stimmt, mein Fehler.“ Fertig
-- A: Du hast nie Unrecht
-- S: Du entschuldigst dich, bis es unangenehm wird
-- G: Kommentar löschen. Account löschen
-
-### K07 Online-Diskussion.
-- C: Du liest keine Kommentare
-- A: Du gewinnst mit Fakten und Selbstbewusstsein
-- S: „Ich fühle mich durch diesen Tweet verletzt“
-- G: 6 Stunden Kommentar-Krieg, um 5 Uhr gewonnen
-
-### K08 Jemand will sich mit dir anlegen.
-- C: Du lachst, er lacht, ihr trinkt was zusammen
-- A: Du gehst keinen Schritt zurück
-- S: Du redest über Gefühle, bis er geht
-- G: Wie, außerhalb vom Spiel?
+### Q29 Wann stehst du auf?
+- C: 9:00
+- A: 5:30
+- S: 10:00
+- G: 14:00
 
 ---
 
-## 5. Geld und Karriere (M)
+## 🆕 Neue Vorschläge (zum Aussortieren)
 
-### ⭐ M01 Du bekommst 1000 Euro.
-- C: Urlaub mit Freunden
-- A: ETF, Krypto, Side-Business
-- S: Limited Edition Lego-Set und eine Spende
-- G: Neue Grafikkarte. Und Abos
+### N01 Welche Uhr trägst du?
+- C: Klassische Uhr mit Lederarmband
+- A: Rolex mit Steinen
+- S: Apple Watch
+- G: Keine, die Uhrzeit steht am PC
 
-### M02 Wer zahlt beim Date?
-- C: Mal du, mal sie, entspannt
-- A: Du. Immer
-- S: Auf den Cent geteilt, per PayPal
-- G: Date?
+### N02 Welches Handy hast du?
+- C: iPhone, ohne Hülle
+- A: Neuestes iPhone Pro Max in Gold
+- S: Samsung mit Panzerglas und Hülle
+- G: Handy mit gesprungenem Display
 
-### M03 Dein Traumjob?
-- C: Irgendwas mit Freiheit, wird schon
-- A: CEO. Eigene Firma. Mit 25
-- S: Community Manager bei einer Spielefirma
-- G: Streamer mit 3 Zuschauern
+### N03 Welches Parfum?
+- C: Bleu de Chanel
+- A: Creed Aventus
+- S: Dior Sauvage, wie alle
+- G: Axe
 
-### M04 Wofür gibst du am meisten aus?
-- C: Erlebnisse
-- A: Uhren, Kurse, Coaching
-- S: Merch, Figuren, Hafermilch
-- G: Abos, Skins, Lootboxen
+### N04 Welcher Film?
+- C: James Bond
+- A: Scarface
+- S: Harry Potter
+- G: Ein Anime-Film
 
-### M05 Morgen ist Montag.
-- C: Läuft schon
-- A: Endlich. Grind
-- S: Montags-Meme posten: „Montag mal wieder 😩“
-- G: Montag ist ein soziales Konstrukt
+### N05 Welche Serie?
+- C: Suits
+- A: Peaky Blinders
+- S: Friends
+- G: One Piece
 
-### M06 Krypto?
-- C: Mal was gekauft, keine Ahnung wie viel
-- A: Du erklärst es jedem, ob er will oder nicht
-- S: Pinguin-NFT. Jetzt 3 Euro wert
-- G: Meme-Coin, Tipp aus dem Discord
+### N06 Was trinkst du morgens?
+- C: Espresso
+- A: Pre-Workout
+- S: Hafer-Cappuccino
+- G: Cola vom Vortag
 
-### ⭐ M07 Wann stehst du auf?
-- C: Wenn du wach bist. Meistens früh
-- A: 4:30 Uhr. Kalt duschen
-- S: 9 Uhr, 4 Mal Snooze
-- G: 14 Uhr. Oder gar nicht erst geschlafen
+### N07 Erstes Date, wohin?
+- C: Rooftop-Bar
+- A: Teures Steakhaus
+- S: Café
+- G: Discord-Call
 
-### M08 Bewerbungsgespräch: Deine Schwäche?
-- C: Ehrliche Antwort, alle lachen, du hast den Job
-- A: „Ich arbeite zu hart.“
-- S: 10 Minuten über Imposter-Syndrom
-- G: Kamera aus
+### N08 Wie sieht dein Zimmer aus?
+- C: Aufgeräumt, eine Pflanze
+- A: Großer Spiegel und Hantelbank
+- S: Ikea-Standard
+- G: RGB-Licht, Rollladen unten
 
----
+### N09 Was machst du im Gym?
+- C: Ganzkörper, entspannt
+- A: Nur Brust und Bizeps
+- S: Laufband
+- G: Welches Gym?
 
-## 6. Freunde (F)
+### N10 Was machst du auf einer Hochzeit?
+- C: Tanzt mit der Oma
+- A: Hält ungefragt eine Rede
+- S: Sitzt am Tisch
+- G: Handy unterm Tisch
 
-### ⭐ F01 Deine Rolle in der Gruppe?
-- C: Der, den alle mögen
-- A: Der, der entscheidet
-- S: Der, der an alle Geburtstage denkt
-- G: Der, der nie kommt
+### N11 Deine Ex schreibt dir.
+- C: Liest, antwortet nicht
+- A: „Wer?“
+- S: Antwortet sofort
+- G: Hat keine Ex
 
-### F02 Die Gruppe plant Urlaub.
-- C: Du bist dabei, egal wohin
-- A: Du buchst alles, keiner fragt
-- S: Umfrage, Google Sheet, Budgetplan
-- G: „Bin raus, kein Geld“ (300 Euro für Skins ausgegeben)
+### N12 Wie lange brauchst du im Bad?
+- C: 10 Minuten
+- A: 45 Minuten
+- S: 15 Minuten
+- G: 2 Minuten
 
-### F03 Kumpel hat Liebeskummer.
-- C: Rausgehen, ablenken, Döner
-- A: „Bruder, ab ins Gym. Sie war eh nichts.“
-- S: Ihr weint zusammen, du schickst Heilungs-Podcasts
-- G: Du schickst ein Meme. Zwei Tage später
+### N13 Krypto?
+- C: Bitcoin, lange vergessen
+- A: Erzählt jedem davon
+- S: Lieber Tagesgeld
+- G: Meme-Coins
 
-### F04 Wie viele echte Freunde hast du?
-- C: Viele, und ständig neue
-- A: Wenige, aber loyal. Netzwerk riesig
-- S: Viele, vor allem online in Fandoms
-- G: Discord-Freunde zählen, oder?
+### N14 Jemand beleidigt dich.
+- C: Lacht drüber
+- A: Steht auf
+- S: Entschuldigt sich
+- G: Blockiert ihn online
 
-### F05 Kumpels wollen spontan raus.
-- C: Bin in 10 Minuten da
-- A: Du bestimmst, wohin
-- S: Du brauchst 2 Tage Vorlauf, kommst aber
-- G: Gelesen. Nicht geantwortet
+### N15 Welches Haustier?
+- C: Golden Retriever
+- A: Dobermann
+- S: Katze
+- G: Keins
 
-### F06 Ein Freund hat Geburtstag.
-- C: Du kommst und bringst gute Laune
-- A: Du hältst die Rede
-- S: Selbstgebasteltes Geschenk und Throwback-Post
-- G: Instagram hat dich erinnert. Zu spät
-
-### F07 Ein Freund gewinnt etwas Großes.
-- C: Du freust dich ehrlich
-- A: Glückwunsch. Nächstes Mal schlägst du ihn
-- S: Ultralanger Post, wie stolz du bist
-- G: Du merkst es in 3 Monaten
-
-### F08 Gruppenfoto.
-- C: In der Mitte, ganz natürlich
-- A: Du stellst alle auf
-- S: Der mit dem lustigen Gesicht
-- G: Du machst das Foto. Oder bist nicht dabei
+### N16 Wie bezahlst du?
+- C: Apple Pay
+- A: Bargeld aus der Rolle
+- S: Karte, auf den Cent geteilt
+- G: PayPal von Mama
 
 ---
 
-## 7. Bonus: Gym und Routine (Y)
+## Überlappungsgruppen
 
-Nicht ausgewählt, aber als Reserve da.
+Aus jeder Gruppe kommt höchstens **eine** Frage in denselben Test.
 
-### Y01 Wie oft gehst du ins Gym?
-- C: 3 bis 4 Mal, ohne Plan, sieht trotzdem gut aus
-- A: 6 Mal, mit Plan, Trainingstagebuch, PRs
-- S: Yoga-Kurs und danach ein Proteinriegel
-- G: Abo seit 2 Jahren, 3 Mal da gewesen
-
-### Y02 Dein Frühstück?
-- C: Eier, was halt da ist
-- A: 6 Eier, schwarzer Kaffee
-- S: Soja-Latte und Avocado-Toast
-- G: Energy Drink und Chips von gestern
-
-### Y03 Zwischen den Sätzen?
-- C: Du quatschst mit Leuten
-- A: Du starrst in den Spiegel
-- S: Gym-Selfie mit Filter
-- G: TikTok. 9 Minuten Pause
-
-### Y04 Kalt duschen?
-- C: Manchmal, ist halt erfrischend
-- A: Täglich. Sonntags Eisbad
-- S: Nur lauwarm, die Haut ist empfindlich
-- G: Duschen allgemein: selten
-
----
+| Gruppe | Fragen | Warum |
+|---|---|---|
+| Fortbewegung | A05, Q02, Q20 | AMG, Fahrrad, E-Roller fast gleich |
+| Essen | Q03, Q16 | Pizza bei G in beiden |
+| Apps | Q09, Q25 | beide fragen nach Apps |
+| Hobbys | Q04, Q24 | Sport und Hobbys überschneiden sich |
+| Wochenende | Q08, Q19 | Club bei A in beiden |
+| Filme | N04, N05 | Film und Serie fast gleich |
 
 ## Zählung
 
-| Block | Fragen | davon Bild | davon ⭐ |
-|---|---|---|---|
-| Aussehen und Kleidung | 14 | 6 | 2 |
-| Dating | 14 | 0 | 3 |
-| Bildschirmzeit | 14 | 0 | 3 |
-| Konflikte | 8 | 0 | 2 |
-| Geld | 8 | 0 | 2 |
-| Freunde | 8 | 0 | 1 |
-| Bonus Gym | 4 | 0 | 0 |
-| **Gesamt** | **70** | **6** | **13** |
+| | Anzahl |
+|---|---|
+| Abgesegnet (A01 bis A05, Q01 bis Q29) | 34 |
+| Davon max. gleichzeitig in einem Test (wegen Gruppen) | 28 |
+| Neue Vorschläge N01 bis N16 | 16 |
+| Mit allen Vorschlägen max. in einem Test | 43 |
 
-Für den schnellen Test fehlen also noch 3 Streichungen (13 ⭐, gebraucht werden 10).
+Für den 40er-Test fehlen ohne neue Vorschläge **12 Fragen**. Von den neuen müssen also mindestens 12 bleiben (N04 und N05 zählen zusammen nur als 1).
