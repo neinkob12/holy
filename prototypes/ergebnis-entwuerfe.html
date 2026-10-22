@@ -4,15 +4,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;800&family=Unbounded:wght@600;900&display=swap">
 <style>
-/* Layout: Steuerleiste oben, darunter 5 Handy-Rahmen (je eine Variante), am Handy untereinander */
+/* Layout: Steuerleiste oben, darunter 10 Handy-Rahmen (je eine Variante), am Handy untereinander */
 :root {
   --bg: #eef0f3; --fg: #15171c; --muted: #5d6370; --line: #d5d9e0; --chip: #ffffff;
-  --chad: #3d6bff; --alpha: #ff3b3b; --soy: #7fb89a; --gooner: #9a5cff;
+  --chad: #3d6bff; --alpha: #ff3b3b; --soy: #3fae7c; --gooner: #9a5cff;
   --f-ui: "Manrope", system-ui, sans-serif;
   --f-disp: "Unbounded", "Arial Black", sans-serif;
-  --chrome: linear-gradient(180deg, #ffffff 0%, #e2e6eb 28%, #8b929c 47%, #f5f7f9 55%, #bcc2ca 76%, #727983 100%);
-  --chrome-dark: linear-gradient(180deg, #5e6570 0%, #24282e 40%, #0e1013 52%, #4a515b 70%, #1c1f24 100%);
-  --chrome-box: linear-gradient(135deg, #f7f8fa 0%, #c3c9d1 30%, #8d949e 48%, #eef1f4 62%, #a9b0b9 100%);
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #121419; --fg: #eceef2; --muted: #9aa1ad; --line: #2a2e37; --chip: #1c1f26; color-scheme: dark } }
@@ -20,7 +17,7 @@
 
 * { box-sizing: border-box }
 body { background: var(--bg); color: var(--fg); font-family: var(--f-ui) }
-.wrap { padding-block: 24px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); max-width: 1500px; margin: 0 auto; display: grid; gap: 20px }
+.wrap { padding-block: 24px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); max-width: 1600px; margin: 0 auto; display: grid; gap: 20px }
 header h1 { margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -.01em }
 header p { margin: 4px 0 0; color: var(--muted); font-size: 14px; max-width: 65ch }
 .controls { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: end }
@@ -29,7 +26,7 @@ header p { margin: 4px 0 0; color: var(--muted); font-size: 14px; max-width: 65c
 .seg button[aria-pressed="true"] { background: var(--fg); color: var(--bg) }
 button:focus-visible { outline: 2px solid var(--chad); outline-offset: 2px }
 .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; margin-bottom: 4px }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px 20px; align-items: start }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 24px 20px; align-items: start }
 .col { display: grid; gap: 10px; min-width: 0 }
 .col h2 { margin: 0; font-size: 14px; font-weight: 800 }
 .col h2 span { color: var(--muted); font-weight: 600 }
@@ -40,61 +37,67 @@ button:focus-visible { outline: 2px solid var(--chad); outline-offset: 2px }
 /* ---------- Varianten ---------- */
 .wr { --acc: var(--chad);
   --bg1: #1d2026; --bg2: #2e323b; --ink: #f3f4f6; --disp: #ffffff;
-  --hlbg: var(--acc); --hlfg: #ffffff; --widebg: var(--acc); --widefg: #ffffff;
-  --glow: rgba(255,255,255,.16); --box: rgba(255,255,255,.08); --boxline: rgba(255,255,255,.16); --track: rgba(255,255,255,.12);
-  --btnbg: var(--ink); --btnfg: var(--bg1) }
+  --hlbg: var(--acc); --hlfg: #ffffff;
+  --glow: rgba(255,255,255,.12); --box: rgba(255,255,255,.07); --boxline: rgba(255,255,255,.16); --track: rgba(255,255,255,.12);
+  --frame: rgba(255,255,255,.7); --shim: rgba(255,255,255,.06); --btnbg: var(--ink); --btnfg: var(--bg1) }
 .wr[data-type="chad"] { --acc: var(--chad) }
 .wr[data-type="alpha"] { --acc: var(--alpha) }
 .wr[data-type="soy"] { --acc: var(--soy) }
 .wr[data-type="gooner"] { --acc: var(--gooner) }
-/* 2: Chrome-Schrift auf Anthrazit */
-.wr[data-v="2"] { --ink: #e6e9ee; --hlbg: var(--chrome-box); --hlfg: #15171c; --widebg: var(--chrome-box); --widefg: #15171c }
-/* 3: Silber-Hintergrund, dunkles Chrome */
-.wr[data-v="3"] { --bg1: #f1f3f6; --bg2: #9fa6b0; --ink: #1b1e24; --disp: #1b1e24;
-  --hlbg: #1b1e24; --hlfg: #f3f4f6; --widebg: #1b1e24; --widefg: #f3f4f6;
-  --glow: rgba(255,255,255,.75); --box: rgba(255,255,255,.4); --boxline: rgba(0,0,0,.12); --track: rgba(0,0,0,.1) }
-/* 4: Chrome auf Graphit, Typfarbe als Akzent */
-.wr[data-v="4"] { --bg1: #101215; --bg2: #26292f; --ink: #e6e9ee }
-/* 5: Gelbe Schrift */
-.wr[data-v="5"] { --disp: #ffd60a; --hlbg: #ffd60a; --hlfg: #15171c; --widebg: #ffd60a; --widefg: #15171c; --btnbg: #ffd60a; --btnfg: #15171c }
+.wr[data-light="1"] { --glow: rgba(255,255,255,.65); --box: rgba(255,255,255,.45); --boxline: rgba(0,0,0,.14); --track: rgba(0,0,0,.1);
+  --frame: rgba(0,0,0,.6); --shim: rgba(255,255,255,.4); --hlfg: #f3f4f6 }
+
+.wr[data-v="1"], .wr[data-v="9"] { --bg1: #1d2026; --bg2: #2e323b }
+.wr[data-v="2"] { --bg1: #f1f3f6; --bg2: #9fa6b0; --ink: #1b1e24; --disp: #1b1e24; --hlbg: #1b1e24 }
+.wr[data-v="3"] { --bg1: #19201c; --bg2: #2d3832; --ink: #e4ece7; --hlbg: #c9dbd0; --hlfg: #17201b }
+.wr[data-v="4"], .wr[data-v="10"] { --bg1: #eef3f0; --bg2: #a7b7ae; --ink: #17201b; --disp: #17201b; --hlbg: #17201b }
+.wr[data-v="5"] { --bg1: #1d2026; --bg2: #2a3330; --ink: #eef3f0; --hlbg: #9fd8bf; --hlfg: #10201a }
+.wr[data-v="6"] { --bg1: #61746a; --bg2: #2b3631; --ink: #f2f6f3; --hlbg: #e3ece6; --hlfg: #1d2924; --shim: rgba(255,255,255,.09) }
+.wr[data-v="7"] { --bg1: #f3f6ef; --bg2: #b5c0ac; --ink: #1b2219; --disp: #1b2219; --hlbg: #1b2219 }
+.wr[data-v="8"] { --bg1: #0d1512; --bg2: #1e2a25; --ink: #e0e9e4; --hlbg: #dfe9e3; --hlfg: #0d1512 }
+
+/* Chrome-Verläufe für die große Schrift */
+.wr[data-chrome="silver"] { --cg: linear-gradient(180deg, #ffffff 0%, #e2e6eb 28%, #8b929c 47%, #f5f7f9 55%, #bcc2ca 76%, #727983 100%) }
+.wr[data-chrome="silverdark"] { --cg: linear-gradient(180deg, #5e6570 0%, #24282e 40%, #0e1013 52%, #4a515b 70%, #1c1f24 100%) }
+.wr[data-chrome="green"] { --cg: linear-gradient(180deg, #ffffff 0%, #dfe9e3 28%, #7f9489 47%, #f3f7f4 55%, #b4c4ba 76%, #6a7c72 100%) }
+.wr[data-chrome="greendark"] { --cg: linear-gradient(180deg, #5a6b62 0%, #1f2924 40%, #0d1310 52%, #46564d 70%, #1a221e 100%) }
+.wr[data-chrome="mint"] { --cg: linear-gradient(180deg, #f4fff9 0%, #c3eedb 28%, #5f9c83 47%, #e9fbf2 55%, #9fd8bf 76%, #4f7e6b 100%) }
 
 /* ---------- Wrapped ---------- */
 .wr { position: absolute; inset: 0; container-type: size; color: var(--ink); font-family: var(--f-disp); overflow: hidden; cursor: pointer; user-select: none;
   background: linear-gradient(160deg, var(--bg1) 0%, var(--bg2) 100%) }
 .disp { color: var(--disp) }
-.wr[data-chrome="light"] .disp, .wr[data-chrome="light"] .quote .ch { background-image: var(--chrome); -webkit-background-clip: text; background-clip: text; color: transparent }
-.wr[data-chrome="dark"] .disp, .wr[data-chrome="dark"] .quote .ch { background-image: var(--chrome-dark); -webkit-background-clip: text; background-clip: text; color: transparent }
-.quote .ch { color: var(--disp) }
+.wr[data-chrome]:not([data-chrome=""]) .disp { background-image: var(--cg); -webkit-background-clip: text; background-clip: text; color: transparent }
 
-/* lebendiger Hintergrund, neutral ohne Farbschein */
+/* Hintergrund: neutral, mit ganz leichtem Schimmer */
 .bgl { position: absolute; inset: 0; pointer-events: none; overflow: hidden }
-.conic { position: absolute; width: 180cqh; height: 180cqh; left: 50%; top: 50%; margin: -90cqh 0 0 -90cqh; opacity: .12;
-  background: conic-gradient(from 0deg, transparent 0 20%, var(--ink) 30%, transparent 42% 62%, var(--ink) 70%, transparent 78%); animation: spin 32s linear infinite }
+.shimmer { position: absolute; inset: -50%; background: linear-gradient(115deg, transparent 42%, var(--shim) 50%, transparent 58%); animation: shim 9s ease-in-out infinite }
+.conic { position: absolute; width: 180cqh; height: 180cqh; left: 50%; top: 50%; margin: -90cqh 0 0 -90cqh; opacity: .07;
+  background: conic-gradient(from 0deg, transparent 0 20%, var(--ink) 30%, transparent 42% 62%, var(--ink) 70%, transparent 78%); animation: spin 36s linear infinite }
 .orb { position: absolute; border-radius: 50%; background: radial-gradient(circle, var(--glow) 0%, transparent 68%) }
 .o1 { width: 80cqw; height: 80cqw; left: -25cqw; top: -15cqw; animation: float1 14s ease-in-out infinite }
 .o2 { width: 70cqw; height: 70cqw; right: -30cqw; bottom: 10cqh; animation: float2 17s ease-in-out infinite }
-.o3 { width: 45cqw; height: 45cqw; left: 30cqw; top: 55cqh; animation: float3 11s ease-in-out infinite; opacity: .7 }
-.ring { position: absolute; border-radius: 50%; border: 1.5px solid color-mix(in srgb, var(--ink) 18%, transparent) }
+.ring { position: absolute; border-radius: 50%; border: 1.5px solid color-mix(in srgb, var(--ink) 14%, transparent) }
 .r1 { width: 110cqw; height: 110cqw; right: -55cqw; top: -30cqw; animation: pulse 9s ease-in-out infinite }
 .r2 { width: 70cqw; height: 70cqw; left: -35cqw; bottom: -20cqw; border-style: dashed; animation: spin 40s linear infinite reverse }
-.dots { position: absolute; inset: -40px; opacity: .18; background-image: radial-gradient(color-mix(in srgb, var(--ink) 70%, transparent) 1px, transparent 1.6px); background-size: 18px 18px; animation: drift 20s linear infinite }
-.wave { position: absolute; left: 0; width: 200%; height: 40px; opacity: .28; animation: slide 10s linear infinite }
+.dots { position: absolute; inset: -40px; opacity: .14; background-image: radial-gradient(color-mix(in srgb, var(--ink) 70%, transparent) 1px, transparent 1.6px); background-size: 18px 18px; animation: drift 20s linear infinite }
+.wave { position: absolute; left: 0; width: 200%; height: 40px; opacity: .22; animation: slide 10s linear infinite }
 .wave path { fill: none; stroke: var(--ink); stroke-width: 1.5 }
-.w1 { top: 22cqh } .w2 { top: 78cqh; animation-duration: 14s; animation-direction: reverse; opacity: .2 }
+.w1 { top: 22cqh } .w2 { top: 78cqh; animation-duration: 14s; animation-direction: reverse; opacity: .16 }
 .spark { position: absolute; width: 7px; height: 7px; animation: twinkle 5s ease-in-out infinite }
 .spark::before, .spark::after { content: ""; position: absolute; background: var(--ink); left: 3px; top: 0; width: 1.5px; height: 7px; border-radius: 1px }
 .spark::after { transform: rotate(90deg) }
 .sweep { position: absolute; top: -20%; bottom: -20%; width: 45%; left: -60%; z-index: 2; pointer-events: none;
-  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--ink) 22%, transparent), transparent); transform: skewX(-18deg); animation: sweep .7s ease-out forwards }
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--ink) 18%, transparent), transparent); transform: skewX(-18deg); animation: sweep .7s ease-out forwards }
 
+@keyframes shim { 0%,100% { transform: translateX(-30%) } 50% { transform: translateX(30%) } }
 @keyframes spin { to { transform: rotate(360deg) } }
 @keyframes float1 { 0%,100% { transform: translate(0,0) scale(1) } 50% { transform: translate(18cqw,22cqh) scale(1.15) } }
 @keyframes float2 { 0%,100% { transform: translate(0,0) scale(1) } 50% { transform: translate(-22cqw,-28cqh) scale(.85) } }
-@keyframes float3 { 0%,100% { transform: translate(0,0) } 33% { transform: translate(-25cqw,-10cqh) } 66% { transform: translate(15cqw,-20cqh) } }
 @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1 } 50% { transform: scale(1.12); opacity: .4 } }
 @keyframes drift { to { transform: translate(18px, 36px) } }
 @keyframes slide { to { transform: translateX(-50%) } }
-@keyframes twinkle { 0%,100% { opacity: 0; transform: scale(.4) rotate(0) } 50% { opacity: .6; transform: scale(1) rotate(45deg) } }
+@keyframes twinkle { 0%,100% { opacity: 0; transform: scale(.4) rotate(0) } 50% { opacity: .5; transform: scale(1) rotate(45deg) } }
 @keyframes sweep { to { left: 120% } }
 
 /* Fortschritt und Folien */
@@ -102,84 +105,95 @@ button:focus-visible { outline: 2px solid var(--chad); outline-offset: 2px }
 .bars i { flex: 1; height: 3px; border-radius: 2px; background: color-mix(in srgb, var(--ink) 30%, transparent) }
 .bars i.done { background: var(--ink) }
 .slide { position: absolute; inset: 0; z-index: 1; padding: 14cqw 7cqw 9cqw; display: flex; flex-direction: column; justify-content: center; gap: 4cqw }
-.slide > * { animation: rise .55s cubic-bezier(.2,.8,.2,1) both; animation-delay: calc(var(--d, 0) * 90ms) }
-.slide > .quote { animation: none }
+.slide > * { animation: rise .55s cubic-bezier(.2,.8,.2,1) both; animation-delay: calc(var(--d, 0) * 110ms) }
+.slide > .typed, .slide > .huge, .slide > .quote { animation: none }
+.slide.center { align-items: center; text-align: center }
 @keyframes rise { from { opacity: 0; transform: translateY(5cqw) } }
 .small { font-family: var(--f-ui); font-weight: 600; font-size: 4.6cqw; line-height: 1.4; margin: 0; text-wrap: balance; opacity: .9 }
 .big { font-weight: 900; font-size: 9cqw; line-height: 1.02; margin: 0; letter-spacing: -.02em; text-wrap: balance }
-.huge { font-weight: 900; font-size: 15.5cqw; line-height: .95; margin: 0; letter-spacing: -.03em; overflow-wrap: anywhere }
-.count { font-weight: 900; font-size: 34cqw; line-height: .85; margin: 0 }
+.count { font-weight: 900; font-size: 38cqw; line-height: .85; margin: 0; letter-spacing: -.03em }
 
-/* Quote: Buchstaben fliegen einzeln rein, 1 bis 2 Wörter markiert */
+/* Seite 2: Text wird getippt, dann schießt der Typ rein */
+.typed { font-family: var(--f-ui); font-weight: 800; font-size: 6cqw; margin: 0; min-height: 1.3em }
+.typed .tc { opacity: 0; animation: tin .06s linear forwards; animation-delay: calc(300ms + var(--n) * 80ms) }
+.typed .caret { display: inline-block; width: .5cqw; min-width: 2px; height: 1em; background: currentColor; vertical-align: -.12em; margin-left: .6cqw; animation: blink .8s steps(1) infinite }
+@keyframes tin { to { opacity: 1 } }
+@keyframes blink { 50% { opacity: 0 } }
+.huge { font-weight: 900; font-size: 17cqw; line-height: 1; margin: 0; letter-spacing: -.035em; white-space: nowrap;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--acc) 45%, #fff) 0%, var(--acc) 52%, color-mix(in srgb, var(--acc) 65%, #000) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 1.2cqw 1.6cqw rgba(0,0,0,.45)) drop-shadow(0 0 5cqw color-mix(in srgb, var(--acc) 60%, transparent));
+  animation: shoot .75s cubic-bezier(.2,1.3,.3,1) both !important; animation-delay: 2.6s !important; transform-origin: left center }
+@keyframes shoot { 0% { opacity: 0; transform: translateX(-30cqw) scale(2.4) skewX(-12deg) } 60% { opacity: 1 } 100% { transform: none } }
+
+/* Seite 3: Wörter schießen einzeln rein, 1 bis 2 Wörter markiert */
 .quote { font-weight: 900; font-size: min(8.4cqw, 5.2cqh); line-height: 1.22; margin: 0; letter-spacing: -.015em }
-.quote .w { display: inline-block; white-space: nowrap; position: relative }
-.quote .ch { display: inline-block; animation: flyc .7s cubic-bezier(.2,.9,.25,1.15) both; animation-delay: calc(var(--n) * 32ms) }
-@keyframes flyc { from { opacity: 0; transform: translate(var(--x), var(--y)) rotate(var(--r)) scale(.3) } }
+.quote .w { display: inline-block; position: relative; animation: wordin .5s cubic-bezier(.2,1.2,.3,1) both; animation-delay: calc(200ms + var(--n) * 170ms) }
+@keyframes wordin { from { opacity: 0; transform: translateX(28cqw) scale(1.3) } }
 .quote .hl { padding: 0 1.4cqw; margin: 0 -.6cqw; isolation: isolate }
-.quote .hl::before { content: ""; position: absolute; inset: 4% 0 2%; z-index: -1; border-radius: 1.4cqw; background: var(--hlbg); transform-origin: left; transform: scaleX(0); animation: mark .5s cubic-bezier(.3,.9,.3,1) forwards; animation-delay: var(--md) }
-.wr .quote .hl .ch { background-image: none; -webkit-background-clip: border-box; background-clip: border-box; color: var(--hlfg) }
+.quote .hl::before { content: ""; position: absolute; inset: 4% 0 2%; z-index: -1; border-radius: 1.4cqw; background: var(--hlbg); transform-origin: left; transform: scaleX(0); animation: mark .45s cubic-bezier(.3,.9,.3,1) forwards; animation-delay: var(--md) }
+.wr .quote .w.hl { background-image: none; -webkit-background-clip: border-box; background-clip: border-box; color: var(--hlfg) }
 @keyframes mark { to { transform: scaleX(1) } }
 
-/* Eigenschaften mit Swoosh */
-.traits { display: grid; grid-template-columns: 1fr 1fr; gap: 2.6cqw }
-.trait { background: var(--box); border: 1px solid var(--boxline); border-radius: 3cqw; padding: 4cqw 3.6cqw; font-weight: 900; font-size: 5.4cqw; line-height: 1.1; overflow-wrap: anywhere;
-  animation: swooshL .75s cubic-bezier(.16,1.2,.3,1) both; animation-delay: calc(250ms + var(--i) * 140ms); position: relative; overflow: hidden }
-.trait:nth-child(even) { animation-name: swooshR }
-.trait.wide { grid-column: 1 / -1; font-size: 6.4cqw; background: var(--widebg); border-color: transparent }
-.trait.wide span { color: var(--widefg); background: none; -webkit-background-clip: border-box; background-clip: border-box }
-.trait::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 20%, rgba(255,255,255,.35) 50%, transparent 80%); transform: translateX(-120%); animation: shine .9s ease-out both; animation-delay: calc(650ms + var(--i) * 140ms) }
-@keyframes swooshL { from { opacity: 0; transform: translateX(-110%) skewX(-22deg) } }
-@keyframes swooshR { from { opacity: 0; transform: translateX(110%) skewX(22deg) } }
-@keyframes shine { to { transform: translateX(120%) } }
+/* Seite 4: Karte (Viereck oder Raute) plus Balken */
+.mapw { position: relative; width: 56cqw; aspect-ratio: 1; align-self: center; margin: 7.5cqw 0; flex: none }
+.q { position: absolute; inset: 0; --unrot: 0deg }
+.areas { position: absolute; inset: 0; border-radius: 2.4cqw; overflow: hidden; display: grid; grid-template: 1fr 1fr / 1fr 1fr;
+  border: 2px solid var(--frame); box-shadow: 0 2.4cqw 7cqw rgba(0,0,0,.28) }
+.areas i { background: color-mix(in srgb, var(--c) 24%, transparent) }
+.areas i:nth-child(1) { border-right: 1px solid var(--boxline); border-bottom: 1px solid var(--boxline) }
+.areas i:nth-child(2) { border-bottom: 1px solid var(--boxline) }
+.areas i:nth-child(3) { border-right: 1px solid var(--boxline) }
+.mapw[data-shape="diamond"] .q { inset: 14.64%; transform: rotate(45deg); --unrot: -45deg }
+.mapw[data-shape="diamond"] .areas { border-radius: 1.6cqw }
+.lab { position: absolute; font-weight: 900; font-size: 3.4cqw; padding: 1.3cqw 2.2cqw; border-radius: 1.4cqw; background: var(--c); color: #fff; line-height: 1; white-space: nowrap }
+.mapw[data-shape="square"] .l1 { left: 0; bottom: calc(100% + 1.6cqw) }
+.mapw[data-shape="square"] .l2 { right: 0; bottom: calc(100% + 1.6cqw) }
+.mapw[data-shape="square"] .l3 { left: 0; top: calc(100% + 1.6cqw) }
+.mapw[data-shape="square"] .l4 { right: 0; top: calc(100% + 1.6cqw) }
+.mapw[data-shape="diamond"] .l1 { left: 50%; bottom: calc(100% + 1.6cqw); transform: translateX(-50%) }
+.mapw[data-shape="diamond"] .l2 { left: calc(100% + 1.6cqw); top: 50%; transform: translateY(-50%) }
+.mapw[data-shape="diamond"] .l3 { right: calc(100% + 1.6cqw); top: 50%; transform: translateY(-50%) }
+.mapw[data-shape="diamond"] .l4 { left: 50%; top: calc(100% + 1.6cqw); transform: translateX(-50%) }
+/* dein Punkt fliegt erst nach 2,5 Sekunden von außen rein */
+.me { position: absolute; width: 4.6cqw; height: 4.6cqw; border-radius: 50%; background: var(--ink); z-index: 2; transform: translate(-50%, -50%) rotate(var(--unrot));
+  box-shadow: 0 0 0 1.4cqw color-mix(in srgb, var(--ink) 25%, transparent), 0 1cqw 3cqw rgba(0,0,0,.4);
+  animation: flyin 1.3s cubic-bezier(.25,.9,.3,1.15) both; animation-delay: 2.5s }
+.me::after { content: "Du"; position: absolute; left: 50%; top: -6.6cqw; transform: translateX(-50%); font-family: var(--f-ui); font-weight: 800; font-size: 3.6cqw; color: var(--ink) }
+.me::before { content: ""; position: absolute; inset: -3cqw; border-radius: 50%; border: 1.5px solid var(--ink); opacity: 0; animation: ping 2s ease-out infinite 3.8s }
+@keyframes flyin {
+  0% { left: 130%; top: -70%; opacity: 0; transform: translate(-50%, -50%) rotate(var(--unrot)) scale(3) }
+  15% { opacity: 1 }
+  70% { transform: translate(-50%, -50%) rotate(var(--unrot)) scale(.85) }
+  100% { transform: translate(-50%, -50%) rotate(var(--unrot)) scale(1) } }
+@keyframes ping { from { transform: scale(.4); opacity: .8 } to { transform: scale(1.6); opacity: 0 } }
 
-/* Split: Karte plus farbige Balken */
 .wsplit { position: relative }
-.bars4 { display: grid; gap: 2.8cqw }
-.wrow { display: grid; gap: 1.4cqw }
-.wrow .h { display: flex; justify-content: space-between; font-size: 4.4cqw; font-weight: 600 }
+.bars4 { display: grid; gap: 2.6cqw }
+.wrow { display: grid; gap: 1.2cqw }
+.wrow .h { display: flex; justify-content: space-between; font-size: 4.2cqw; font-weight: 600 }
 .wrow .h b { font-variant-numeric: tabular-nums }
 .wrow .h .dot { display: inline-block; width: 2.6cqw; height: 2.6cqw; border-radius: 50%; background: var(--c); margin-right: 1.6cqw; vertical-align: middle }
-.wrow .t { height: 3.6cqw; background: var(--track); border-radius: 2cqw; overflow: hidden }
+.wrow .t { height: 3.4cqw; background: var(--track); border-radius: 2cqw; overflow: hidden }
 .wrow .t i { display: block; height: 100%; background: var(--c); border-radius: 2cqw; transform-origin: left; animation: grow 1s cubic-bezier(.2,.8,.2,1) both; animation-delay: calc(500ms + var(--i) * 120ms) }
 @keyframes grow { from { transform: scaleX(0) } }
-.map { position: relative; width: 64cqw; max-width: 100%; aspect-ratio: 1; align-self: center; justify-self: center; border-radius: 2.4cqw; border: 1.5px solid var(--boxline);
-  background:
-    linear-gradient(var(--boxline), var(--boxline)) center / 1px 100% no-repeat,
-    linear-gradient(var(--boxline), var(--boxline)) center / 100% 1px no-repeat,
-    radial-gradient(color-mix(in srgb, var(--ink) 35%, transparent) .8px, transparent 1.3px) 0 0 / 8cqw 8cqw,
-    var(--box) }
-.map .c { position: absolute; font-weight: 900; font-size: 3.3cqw; padding: 1.2cqw 2cqw; border-radius: 1.4cqw; background: var(--c); color: #fff; line-height: 1 }
-.map .tl { left: -1.5cqw; top: -1.5cqw } .map .tr { right: -1.5cqw; top: -1.5cqw }
-.map .bl { left: -1.5cqw; bottom: -1.5cqw } .map .br { right: -1.5cqw; bottom: -1.5cqw }
-/* dein Punkt fliegt erst nach 2,5 Sekunden von oben außerhalb rein */
-.map .me { position: absolute; width: 4.4cqw; height: 4.4cqw; border-radius: 50%; background: var(--ink); transform: translate(-50%, -50%);
-  box-shadow: 0 0 0 1.4cqw color-mix(in srgb, var(--ink) 25%, transparent);
-  animation: flyin 1.3s cubic-bezier(.25,.9,.3,1.15) both; animation-delay: 2.5s }
-.map .me::after { content: "Du"; position: absolute; left: 50%; top: -6.4cqw; transform: translateX(-50%); font-family: var(--f-ui); font-weight: 800; font-size: 3.4cqw; color: var(--ink) }
-.map .me::before { content: ""; position: absolute; inset: -3cqw; border-radius: 50%; border: 1.5px solid var(--ink); opacity: 0; animation: ping 2s ease-out infinite 3.8s }
-@keyframes flyin {
-  0% { left: 130%; top: -70%; opacity: 0; transform: translate(-50%, -50%) scale(3) }
-  15% { opacity: 1 }
-  70% { transform: translate(-50%, -50%) scale(.85) }
-  100% { transform: translate(-50%, -50%) scale(1) } }
-@keyframes ping { from { transform: scale(.4); opacity: .8 } to { transform: scale(1.6); opacity: 0 } }
-.blur { filter: blur(2.2cqw) }
-.lock { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; gap: 2cqw }
-.lock b { font-size: 5cqw }
-.lock span { font-family: var(--f-ui); font-weight: 600; font-size: 4cqw; max-width: 70cqw; line-height: 1.4; justify-self: center }
+.bars4.blur { filter: blur(3.2cqw); opacity: .7 }
+.lock { position: absolute; inset: -2cqw 0; display: grid; place-content: center; justify-items: center; text-align: center; gap: 2.4cqw }
+.lock b { font-size: 4.8cqw; line-height: 1.15 }
+.lock .btn { width: auto; padding: 3.2cqw 5cqw }
 
-/* Teilen */
-.actions { display: grid; gap: 2.4cqw; font-family: var(--f-ui) }
-.btn { font: 800 4.4cqw var(--f-ui); border: 0; cursor: pointer; padding: 3.8cqw; border-radius: 3cqw; width: 100%; display: flex; align-items: center; justify-content: center; gap: 2.4cqw }
-.btn svg { width: 5.2cqw; height: 5.2cqw; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; flex: none }
-.oneline { white-space: nowrap; font-size: 6.4cqw }
+/* Seite 5: Teilen */
+.actions { display: grid; gap: 2.2cqw; font-family: var(--f-ui); width: 74cqw }
+.btn { font: 800 4cqw var(--f-ui); border: 0; cursor: pointer; padding: 3.2cqw; border-radius: 2.6cqw; width: 100%; display: flex; align-items: center; justify-content: center; gap: 2.2cqw }
+.btn svg { width: 4.8cqw; height: 4.8cqw; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; flex: none }
 .primary { background: var(--btnbg); color: var(--btnfg) }
-.wr[data-chrome="light"] .primary { background: var(--chrome-box); color: #15171c }
 .ghost { background: var(--box); color: var(--ink); border: 1px solid var(--boxline) }
-.hint { position: absolute; bottom: 3.5cqw; left: 0; right: 0; text-align: center; font: 600 3.2cqw var(--f-ui); opacity: .65; z-index: 3 }
+.oneline { white-space: nowrap; font-size: 6.6cqw }
+.hint { position: absolute; bottom: 3.5cqw; left: 0; right: 0; text-align: center; font: 600 3.2cqw var(--f-ui); opacity: .6; z-index: 3 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bgl *, .slide > *, .trait, .trait::after, .wrow .t i, .sweep, .quote .ch, .map .me, .map .me::before { animation: none !important }
+  .bgl *, .slide > *, .wrow .t i, .sweep, .quote .w, .me, .me::before, .typed .tc, .typed .caret { animation: none !important }
+  .typed .tc { opacity: 1 }
   .quote .hl::before { animation: none; transform: none }
   .sweep { display: none }
 }
@@ -187,8 +201,8 @@ button:focus-visible { outline: 2px solid var(--chad); outline-offset: 2px }
 
 <div class="wrap">
   <header>
-    <h1>Ergebnisseite Wrapped: Anthrazit, Chrome, Gelb</h1>
-    <p>Jedes Handy antippen, um durch die Seiten zu gehen. Typ und Freischalt-Zustand gelten für alle fünf. Prozentzahlen sind Beispiele.</p>
+    <h1>Ergebnisseite Wrapped: Runde 3</h1>
+    <p>10 Varianten auf Basis von Anthrazit und Silber, mit Silbergrün. 9 und 10 zeigen die Raute. Jedes Handy antippen, um weiterzublättern. Prozentzahlen sind Beispiele.</p>
   </header>
 
   <div class="controls">
@@ -200,7 +214,7 @@ button:focus-visible { outline: 2px solid var(--chad); outline-offset: 2px }
         <button id="t-gooner" data-t="gooner" aria-pressed="false">Gooner</button>
       </div>
     </div>
-    <div><div class="lbl">Split</div>
+    <div><div class="lbl">Prozente</div>
       <div class="seg" id="lockSeg" role="group" aria-label="Freischalt-Zustand">
         <button id="l-on" data-l="1" aria-pressed="true">Gesperrt</button>
         <button id="l-off" data-l="0" aria-pressed="false">Freigeschaltet</button>
@@ -219,29 +233,32 @@ button:focus-visible { outline: 2px solid var(--chad); outline-offset: 2px }
 <div class="toast" id="toast" role="status"></div>
 
 <script>
-// [Name, Beschreibung, Chrome-Schrift]
+// [Name, Beschreibung, Chrome-Schrift, hell, Form]
 const VARS = [
-  ["Anthrazit", "Original, weiße Schrift", ""],
-  ["Chrome", "Silber-Schrift auf Anthrazit", "light"],
-  ["Silber", "heller Chrome-Grund, dunkle Schrift", "dark"],
-  ["Graphit", "Chrome plus Typfarbe als Akzent", "light"],
-  ["Gelb", "gelbe Schrift auf Anthrazit", ""]
+  ["Anthrazit", "Favorit aus Runde 2", "", 0, "square"],
+  ["Silber", "Favorit aus Runde 2", "silverdark", 1, "square"],
+  ["Anthrazit Salbei", "dunkel, grünes Chrome", "green", 0, "square"],
+  ["Silbergrün", "hell, dunkles Grün-Chrome", "greendark", 1, "square"],
+  ["Mint Chrome", "Anthrazit mit Mint-Schrift", "mint", 0, "square"],
+  ["Eukalyptus", "mittleres Graugrün", "", 0, "square"],
+  ["Pistazie Silber", "hell und warm-grün", "greendark", 1, "square"],
+  ["Tiefgrün", "fast schwarz, Silber-Chrome", "silver", 0, "square"],
+  ["Anthrazit Raute", "wie 1, Karte als Raute", "", 0, "diamond"],
+  ["Silbergrün Raute", "wie 4, Karte als Raute", "greendark", 1, "diamond"]
 ];
 const TYPES = {
   chad:   { name: "Chad",   quote: "Andere suchen das Rampenlicht. Dich findet es von allein.", hl: ["Rampenlicht."],
-            traits: ["Souverän", "Stilvoll", "Gelassen", "Unbeeindruckt", "Magnetisch"],
             split: { chad: 58, alpha: 21, soy: 13, gooner: 8 } },
   alpha:  { name: "Alpha",  quote: "Andere warten auf ihre Chance. Du nimmst sie dir.", hl: ["nimmst"],
-            traits: ["Dominant", "Ehrgeizig", "Laut", "Unaufhaltsam", "Immer im Wettkampf"],
             split: { chad: 24, alpha: 54, soy: 7, gooner: 15 } },
   soy:    { name: "SoyBoy", quote: "Die Welt braucht Helden. Und jemanden, der danach aufräumt.", hl: ["aufräumt."],
-            traits: ["Zuverlässig", "Leise", "Pünktlich", "Harmonisch", "Unsichtbar"],
             split: { chad: 12, alpha: 6, soy: 61, gooner: 21 } },
   gooner: { name: "Gooner", quote: "Die Welt dreht sich weiter. Nur eben ohne dich.", hl: ["ohne", "dich."],
-            traits: ["Nachtaktiv", "Unerreichbar", "Eigenbrötler", "Ausdauernd", "Offline für die Welt"],
             split: { chad: 5, alpha: 11, soy: 19, gooner: 65 } }
 };
 const ORDER = ["chad", "alpha", "soy", "gooner"];
+// Gesperrt: feste Reihenfolge und Fantasie-Längen, damit man nichts ablesen kann
+const FAKE = [64, 38, 52, 27];
 const N = 5;
 let cur = "chad", locked = true;
 const slides = VARS.map(() => 0);
@@ -249,38 +266,14 @@ const slides = VARS.map(() => 0);
 const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const sorted = t => ORDER.slice().sort((a, b) => TYPES[t].split[b] - TYPES[t].split[a]);
 // Ecken: Chad oben links, Alpha oben rechts, SoyBoy unten links, Gooner unten rechts.
+// Bei der Raute wird das Viereck um 45 Grad gedreht: Chad oben, Alpha rechts, Gooner unten, SoyBoy links.
 // Quadrierte Anteile ziehen den Punkt deutlicher zum Haupttyp.
 const CORNERS = { chad: [0, 0], alpha: [1, 0], soy: [0, 1], gooner: [1, 1] };
 function spot(t) {
   const s = TYPES[t].split; let sx = 0, sy = 0, sw = 0;
   for (const k of ORDER) { const w = s[k] ** 2; sx += w * CORNERS[k][0]; sy += w * CORNERS[k][1]; sw += w; }
-  const c = v => Math.round(Math.min(90, Math.max(10, v / sw * 100)));
+  const c = v => Math.round(Math.min(88, Math.max(12, v / sw * 100)));
   return [c(sx), c(sy)];
-}
-const rnd = (a, b) => (a + Math.random() * (b - a)).toFixed(1);
-
-// Jeder Buchstabe bekommt eine eigene Startposition und fliegt einzeln rein.
-function flyQuote(t) {
-  const T = TYPES[t];
-  const words = `„${T.quote}“`.split(" ");
-  let n = 0, html = "", markAt = 0;
-  words.forEach((w, wi) => {
-    const clean = w.replace(/[„“]/g, "");
-    const hl = T.hl.includes(clean);
-    const chars = [...w].map(ch => {
-      const s = `<span class="ch" style="--n:${n};--x:${rnd(-60, 60)}cqw;--y:${rnd(-80, 80)}cqh;--r:${rnd(-180, 180)}deg">${esc(ch)}</span>`;
-      n++; return s;
-    }).join("");
-    if (hl) markAt = n;
-    html += `<span class="w${hl ? " hl" : ""}"${hl ? ` style="--md:calc(${markAt} * 32ms + 600ms)"` : ""}>${chars}</span>${wi < words.length - 1 ? " " : ""}`;
-  });
-  return `<p class="quote" aria-label="${esc(T.quote)}">${html}</p>`;
-}
-
-function toast(msg) {
-  const el = document.getElementById("toast");
-  el.textContent = msg; el.classList.add("on");
-  clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove("on"), 1600);
 }
 
 const svg = d => `<svg viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
@@ -289,46 +282,80 @@ const ICON = {
   story: svg(`<rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/>`),
   copy: svg(`<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/>`)
 };
+
+function typed(text) {
+  const chars = [...text].map((c, n) => `<span class="tc" style="--n:${n}">${c === " " ? "&nbsp;" : esc(c)}</span>`).join("");
+  return `<p class="typed" aria-label="${esc(text)}">${chars}<span class="caret"></span></p>`;
+}
+
+function quote(t) {
+  const T = TYPES[t];
+  const words = `„${T.quote}“`.split(" ");
+  return `<p class="quote" aria-label="${esc(T.quote)}">${words.map((w, n) => {
+    const hl = T.hl.includes(w.replace(/[„“]/g, ""));
+    return `<span class="w disp${hl ? " hl" : ""}" style="--n:${n}${hl ? `;--md:calc(${n} * 170ms + 650ms)` : ""}">${esc(w)}</span>`;
+  }).join(" ")}</p>`;
+}
+
+function map(t, shape) {
+  const [x, y] = spot(t);
+  const lab = (k, i) => `<span class="lab l${i}" style="--c:var(--${k})">${TYPES[k].name}</span>`;
+  const labs = shape === "diamond"
+    ? lab("chad", 1) + lab("alpha", 2) + lab("soy", 3) + lab("gooner", 4)
+    : lab("chad", 1) + lab("alpha", 2) + lab("soy", 3) + lab("gooner", 4);
+  return `<div class="mapw" data-shape="${shape}" style="--d:1">
+    <div class="q"><div class="areas">${ORDER.map(k => `<i style="--c:var(--${k})"></i>`).join("")}</div>
+      <i class="me" style="left:${x}%;top:${y}%"></i></div>${labs}</div>`;
+}
+
+function split(t) {
+  const T = TYPES[t];
+  const rows = locked
+    ? ORDER.map((k, i) => `<div class="wrow" style="--c:var(--${k})"><div class="h"><span><i class="dot"></i>${TYPES[k].name}</span><b>?? %</b></div><div class="t"><i style="width:${FAKE[i]}%;--i:${i}"></i></div></div>`)
+    : sorted(t).map((k, i) => `<div class="wrow" style="--c:var(--${k})"><div class="h"><span><i class="dot"></i>${TYPES[k].name}</span><b>${T.split[k]}%</b></div><div class="t"><i style="width:${T.split[k]}%;--i:${i}"></i></div></div>`);
+  return `<div class="wsplit" style="--d:2"><div class="bars4${locked ? " blur" : ""}" ${locked ? 'aria-hidden="true"' : ""}>${rows.join("")}</div>
+    ${locked ? `<div class="lock"><b>Deine Prozente sind gesperrt</b><button class="btn primary" data-act="share">${ICON.share}Teilen und freischalten</button></div>` : ""}</div>`;
+}
+
+function slideHtml(t, s, shape) {
+  const T = TYPES[t];
+  switch (s) {
+    case 0: return `<p class="big disp">Deine</p><p class="count disp" style="--d:1">36</p><p class="big disp" style="--d:2">Antworten wurden ausgewertet.</p>`;
+    case 1: return `${typed("Bereit? Du bist ein ...")}<p class="huge">${T.name}</p>`;
+    case 2: return quote(t);
+    case 3: return `${map(t, shape)}${split(t)}`;
+    default: return `<p class="big disp oneline">Schalte alles frei:</p><div class="actions" style="--d:1"><button class="btn primary" data-act="share">${ICON.share}Link teilen</button><button class="btn ghost" data-act="story">${ICON.story}Story-Bild</button><button class="btn ghost" data-act="copy">${ICON.copy}Link kopieren</button></div>`;
+  }
+}
+
+function toast(msg) {
+  const el = document.getElementById("toast");
+  el.textContent = msg; el.classList.add("on");
+  clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove("on"), 1600);
+}
+
 const WAVE = `<svg class="wave" viewBox="0 0 400 40" preserveAspectRatio="none"><path d="M0 20 Q25 0 50 20 T100 20 T150 20 T200 20 T250 20 T300 20 T350 20 T400 20"/></svg>`;
 const SPARKS = [[80, 16, 0], [18, 74, 2.5]]
   .map(([x, y, d]) => `<i class="spark" style="left:${x}%;top:${y}%;animation-delay:${d}s"></i>`).join("");
 const BG = `<div class="bgl" aria-hidden="true"><div class="conic"></div><div class="dots"></div>
-  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+  <div class="orb o1"></div><div class="orb o2"></div>
   <div class="ring r1"></div><div class="ring r2"></div>
-  ${WAVE.replace('class="wave"', 'class="wave w1"')}${WAVE.replace('class="wave"', 'class="wave w2"')}${SPARKS}</div>`;
-
-function slideHtml(t, s) {
-  const T = TYPES[t];
-  switch (s) {
-    case 0: return `<p class="small">Wir haben jede deiner Antworten ausgewertet.</p><p class="count disp" style="--d:1">36</p><p class="big disp" style="--d:2">Antworten. Ein Urteil.</p>`;
-    case 1: return `<p class="small">Bereit? Du bist ein ...</p><p class="huge disp" style="--d:2">${T.name}</p>`;
-    case 2: return flyQuote(t);
-    case 3: {
-      const [x, y] = spot(t);
-      const corner = (k, cls) => `<span class="c ${cls}" style="--c:var(--${k})">${TYPES[k].name}</span>`;
-      return `<p class="small">Dein voller Split</p>
-        <div class="map" style="--d:1">${corner("chad", "tl")}${corner("alpha", "tr")}${corner("soy", "bl")}${corner("gooner", "br")}<i class="me" style="left:${x}%;top:${y}%"></i></div>
-        <div class="wsplit" style="--d:2"><div class="bars4${locked ? " blur" : ""}">${sorted(t).map((k, i) => `<div class="wrow" style="--c:var(--${k})"><div class="h"><span><i class="dot"></i>${TYPES[k].name}</span><b>${T.split[k]}%</b></div><div class="t"><i style="width:${T.split[k]}%;--i:${i}"></i></div></div>`).join("")}</div>
-        ${locked ? `<div class="lock"><b>Prozente gesperrt</b><span>Einer muss deinen Link öffnen.</span></div>` : ""}</div>`;
-    }
-    default: return `<p class="big disp oneline">Schalte alles frei:</p><div class="actions" style="--d:1"><button class="btn primary" data-act="share">${ICON.share}Link teilen</button><button class="btn ghost" data-act="story">${ICON.story}Story-Bild</button><button class="btn ghost" data-act="copy">${ICON.copy}Link kopieren</button></div>`;
-  }
-}
+  ${WAVE.replace('class="wave"', 'class="wave w1"')}${WAVE.replace('class="wave"', 'class="wave w2"')}${SPARKS}<div class="shimmer"></div></div>`;
 
 function paintSlide(p, sweep) {
   const wr = document.getElementById("wr" + p);
   const s = slides[p];
   wr.querySelector(".bars").innerHTML = Array.from({ length: N }, (_, i) => `<i class="${i <= s ? "done" : ""}"></i>`).join("");
-  wr.querySelector(".stage").innerHTML = `<div class="slide">${slideHtml(cur, s)}</div>`;
+  wr.querySelector(".stage").innerHTML = `<div class="slide${s === N - 1 ? " center" : ""}">${slideHtml(cur, s, VARS[p][4])}</div>`;
   wr.querySelector(".hint").textContent = s < N - 1 ? "Tippen für weiter" : "Tippen für Neustart";
   const old = wr.querySelector(".sweep"); if (old) old.remove();
   if (sweep) { const sw = document.createElement("div"); sw.className = "sweep"; wr.appendChild(sw); }
 }
 
 function build() {
-  document.getElementById("grid").innerHTML = VARS.map(([n, d, chrome], p) => `
+  document.getElementById("grid").innerHTML = VARS.map(([n, d, chrome, light], p) => `
     <section class="col"><h2>${p + 1}. ${n} <span>· ${d}</span></h2>
-      <div class="phone"><div class="wr" id="wr${p}" data-v="${p + 1}" data-chrome="${chrome}" data-type="${cur}" data-p="${p}" role="button" tabindex="0" aria-label="${n}: nächste Seite">
+      <div class="phone"><div class="wr" id="wr${p}" data-v="${p + 1}" data-chrome="${chrome}" data-light="${light}" data-type="${cur}" data-p="${p}" role="button" tabindex="0" aria-label="${n}: nächste Seite">
         ${BG}<div class="bars"></div><div class="stage"></div><div class="hint"></div>
       </div></div></section>`).join("");
   VARS.forEach((_, p) => paintSlide(p, false));
