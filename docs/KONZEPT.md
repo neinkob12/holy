@@ -9,7 +9,7 @@ Halb ernster Persönlichkeitstest auf Deutsch für Jungs von 16 bis 25. Webseite
 | Ton | Halb ernst: lustig verpackt, Ergebnis kurz, keine Tipps |
 | Sprache | Jugendsprache und Memes |
 | Plattform | Eigene Webseite auf Vercel, erstmal Vercel-Adresse |
-| Tests | Schnell: 10 Fragen (ca. 2 Min). Lang: 40 Fragen (ca. 8 Min) |
+| Tests | Schnell: 10 Fragen (ca. 2 Min). Lang: 36 Fragen (ca. 7 Min) |
 | Antwortformat | 4 Antworten pro Frage, jede gibt Punkte für genau einen Typ. Reihenfolge wird gemischt |
 | Themen | Aussehen und Kleidung, Dating, Bildschirmzeit und Internet, Konflikte, Geld, Freunde. Gym nur als Bonus |
 | Bildfragen | Einige Fragen mit 4 Bildern statt Text, z.B. Haarschnitt, Outfit, Schuhe, Bart. Bilder kommen später (Illustrationen im gleichen Stil) |
@@ -49,8 +49,8 @@ Gerät erkennen: zufällige Geräte-ID im Browser-Speicher. Eigener Link auf eig
 
 ## Reihenfolge
 
-1. Fragenkatalog aussortieren (`docs/FRAGEN.md`). **Jetzt dran.**
-2. Ergebnistexte für die 4 Typen.
+1. Fragenkatalog aussortieren (`docs/FRAGEN.md`). Erledigt.
+2. Ergebnistexte für die 4 Typen. **Jetzt dran.**
 3. 3 Design-Entwürfe der Ergebnisseite.
 4. Test-Ablauf bauen.
 5. Teilen und Freischalten mit Upstash.

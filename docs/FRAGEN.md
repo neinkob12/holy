@@ -1,7 +1,7 @@
-# Fragenkatalog
+# Fragenkatalog (final)
 
 C = Chad, A = Alpha, S = SoyBoy, G = Gooner. Im Test wird die Reihenfolge der Antworten gemischt.
-🖼️ = Bildfrage (4 Bilder statt Text). 🆕 = neuer Vorschlag, noch nicht abgesegnet.
+🖼️ = Bildfrage (4 Bilder statt Text).
 
 **Regel:** Fragen aus derselben Überlappungsgruppe (siehe unten) kommen nie zusammen in einen Test.
 
@@ -277,46 +277,6 @@ C = Chad, A = Alpha, S = SoyBoy, G = Gooner. Im Test wird die Reihenfolge der An
 
 ---
 
-## 🆕 Neue Vorschläge (zum Aussortieren)
-
-### N17 Wo wohnst du am liebsten?
-- C: Altbau in der Stadt
-- A: Penthouse
-- S: WG
-- G: Kinderzimmer bei Mama
-
-### N18 Dein Traumjob?
-- C: Unternehmer
-- A: Trader
-- S: Beamter
-- G: Streamer
-
-### N19 Welche Brille?
-- C: Ray-Ban
-- A: Gucci-Sonnenbrille, auch drinnen
-- S: Normale Brille vom Optiker
-- G: Blaulichtfilter-Brille
-
-### N20 Was postest du in deine Story?
-- C: Nichts
-- A: Gym und Auto
-- S: Essen
-- G: Gaming-Clips
-
-### N21 Wo sitzt du im Bus?
-- C: Ganz hinten
-- A: Mitte, laut am Telefon
-- S: Vorne beim Fahrer
-- G: Am Fenster mit Kopfhörern
-
-### N22 Wie feierst du Geburtstag?
-- C: Dinner mit Freunden
-- A: Große Party
-- S: Mit der Familie
-- G: Im Discord
-
----
-
 ## Überlappungsgruppen
 
 Aus jeder Gruppe kommt höchstens **eine** Frage in denselben Test.
@@ -330,13 +290,10 @@ Aus jeder Gruppe kommt höchstens **eine** Frage in denselben Test.
 | Wochenende | Q08, Q19 | Club bei A in beiden |
 | Filme | N04, N05 | Film und Serie fast gleich |
 
-## Zählung
+## Zählung (final)
 
 | | Anzahl |
 |---|---|
-| Abgesegnet gesamt (A01 bis A05, Q01 bis Q29, 9 N-Fragen) | 43 |
-| Davon max. gleichzeitig in einem Test (wegen Gruppen) | 36 |
-| Fehlen für den 40er-Test | 4 |
-| Neue Vorschläge N17 bis N22 | 6 |
-
-Von N17 bis N22 müssen also mindestens 4 bleiben.
+| Fragen gesamt | 43 |
+| Langer Test | 36 (je Überlappungsgruppe eine Frage, ca. 7 Min) |
+| Schneller Test | 10, zufällig gezogen, ohne Überlappungen |
