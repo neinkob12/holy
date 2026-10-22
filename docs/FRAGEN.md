@@ -219,19 +219,13 @@ C = Chad, A = Alpha, S = SoyBoy, G = Gooner. Im Test wird die Reihenfolge der An
 
 ---
 
-## 🆕 Neue Vorschläge (zum Aussortieren)
-
-### N01 Welche Uhr trägst du?
-- C: Klassische Uhr mit Lederarmband
-- A: Rolex mit Steinen
-- S: Apple Watch
-- G: Keine, die Uhrzeit steht am PC
+## Neue Fragen (abgesegnet)
 
 ### N02 Welches Handy hast du?
 - C: iPhone, ohne Hülle
-- A: Neuestes iPhone Pro Max in Gold
-- S: Samsung mit Panzerglas und Hülle
-- G: Handy mit gesprungenem Display
+- A: Neuestes iPhone Pro Max
+- S: Refurbished
+- G: Samsung
 
 ### N03 Welches Parfum?
 - C: Bleu de Chanel
@@ -259,63 +253,67 @@ C = Chad, A = Alpha, S = SoyBoy, G = Gooner. Im Test wird die Reihenfolge der An
 
 ### N07 Erstes Date, wohin?
 - C: Rooftop-Bar
-- A: Teures Steakhaus
+- A: Shisha-Bar
 - S: Café
 - G: Discord-Call
 
-### N08 Wie sieht dein Zimmer aus?
-- C: Aufgeräumt, eine Pflanze
-- A: Großer Spiegel und Hantelbank
-- S: Ikea-Standard
-- G: RGB-Licht, Rollladen unten
-
-### N09 Was machst du im Gym?
-- C: Ganzkörper, entspannt
-- A: Nur Brust und Bizeps
-- S: Laufband
-- G: Welches Gym?
-
-### N10 Was machst du auf einer Hochzeit?
-- C: Tanzt mit der Oma
-- A: Hält ungefragt eine Rede
-- S: Sitzt am Tisch
-- G: Handy unterm Tisch
-
-### N11 Deine Ex schreibt dir.
-- C: Liest, antwortet nicht
-- A: „Wer?“
-- S: Antwortet sofort
-- G: Hat keine Ex
-
-### N12 Wie lange brauchst du im Bad?
-- C: 10 Minuten
-- A: 45 Minuten
-- S: 15 Minuten
-- G: 2 Minuten
-
-### N13 Krypto?
-- C: Bitcoin, lange vergessen
-- A: Erzählt jedem davon
-- S: Lieber Tagesgeld
-- G: Meme-Coins
-
-### N14 Jemand beleidigt dich.
-- C: Lacht drüber
-- A: Steht auf
-- S: Entschuldigt sich
-- G: Blockiert ihn online
+### N09 Wie trainierst du im Gym?
+- C: Full Body
+- A: Brust
+- S: Cardio
+- G: Ist nicht da
 
 ### N15 Welches Haustier?
 - C: Golden Retriever
-- A: Dobermann
+- A: Rottweiler
 - S: Katze
-- G: Keins
+- G: Hamster
 
 ### N16 Wie bezahlst du?
 - C: Apple Pay
 - A: Bargeld aus der Rolle
-- S: Karte, auf den Cent geteilt
+- S: Mit Münzen
 - G: PayPal von Mama
+
+---
+
+## 🆕 Neue Vorschläge (zum Aussortieren)
+
+### N17 Wo wohnst du am liebsten?
+- C: Altbau in der Stadt
+- A: Penthouse
+- S: WG
+- G: Kinderzimmer bei Mama
+
+### N18 Dein Traumjob?
+- C: Unternehmer
+- A: Trader
+- S: Beamter
+- G: Streamer
+
+### N19 Welche Brille?
+- C: Ray-Ban
+- A: Gucci-Sonnenbrille, auch drinnen
+- S: Normale Brille vom Optiker
+- G: Blaulichtfilter-Brille
+
+### N20 Was postest du in deine Story?
+- C: Nichts
+- A: Gym und Auto
+- S: Essen
+- G: Gaming-Clips
+
+### N21 Wo sitzt du im Bus?
+- C: Ganz hinten
+- A: Mitte, laut am Telefon
+- S: Vorne beim Fahrer
+- G: Am Fenster mit Kopfhörern
+
+### N22 Wie feierst du Geburtstag?
+- C: Dinner mit Freunden
+- A: Große Party
+- S: Mit der Familie
+- G: Im Discord
 
 ---
 
@@ -336,9 +334,9 @@ Aus jeder Gruppe kommt höchstens **eine** Frage in denselben Test.
 
 | | Anzahl |
 |---|---|
-| Abgesegnet (A01 bis A05, Q01 bis Q29) | 34 |
-| Davon max. gleichzeitig in einem Test (wegen Gruppen) | 28 |
-| Neue Vorschläge N01 bis N16 | 16 |
-| Mit allen Vorschlägen max. in einem Test | 43 |
+| Abgesegnet gesamt (A01 bis A05, Q01 bis Q29, 9 N-Fragen) | 43 |
+| Davon max. gleichzeitig in einem Test (wegen Gruppen) | 36 |
+| Fehlen für den 40er-Test | 4 |
+| Neue Vorschläge N17 bis N22 | 6 |
 
-Für den 40er-Test fehlen ohne neue Vorschläge **12 Fragen**. Von den neuen müssen also mindestens 12 bleiben (N04 und N05 zählen zusammen nur als 1).
+Von N17 bis N22 müssen also mindestens 4 bleiben.
