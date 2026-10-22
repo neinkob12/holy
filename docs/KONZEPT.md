@@ -50,8 +50,8 @@ Gerät erkennen: zufällige Geräte-ID im Browser-Speicher. Eigener Link auf eig
 ## Reihenfolge
 
 1. Fragenkatalog aussortieren (`docs/FRAGEN.md`). Erledigt.
-2. Ergebnistexte für die 4 Typen. **Jetzt dran.**
-3. 3 Design-Entwürfe der Ergebnisseite.
+2. Ergebnistexte für die 4 Typen (`docs/ERGEBNISSE.md`). Entwurf steht.
+3. 3 Design-Entwürfe der Ergebnisseite. **Jetzt dran.**
 4. Test-Ablauf bauen.
 5. Teilen und Freischalten mit Upstash.
 6. Deployment auf Vercel.
