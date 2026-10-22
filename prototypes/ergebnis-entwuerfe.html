@@ -4,12 +4,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;800&family=Unbounded:wght@600;900&display=swap">
 <style>
-/* Layout: Steuerleiste oben, darunter 5 Handy-Rahmen (je eine Farbwelt), am Handy untereinander */
+/* Layout: Steuerleiste oben, darunter 5 Handy-Rahmen (je eine Variante), am Handy untereinander */
 :root {
   --bg: #eef0f3; --fg: #15171c; --muted: #5d6370; --line: #d5d9e0; --chip: #ffffff;
   --chad: #3d6bff; --alpha: #ff3b3b; --soy: #7fb89a; --gooner: #9a5cff;
   --f-ui: "Manrope", system-ui, sans-serif;
   --f-disp: "Unbounded", "Arial Black", sans-serif;
+  --chrome: linear-gradient(180deg, #ffffff 0%, #e2e6eb 28%, #8b929c 47%, #f5f7f9 55%, #bcc2ca 76%, #727983 100%);
+  --chrome-dark: linear-gradient(180deg, #5e6570 0%, #24282e 40%, #0e1013 52%, #4a515b 70%, #1c1f24 100%);
+  --chrome-box: linear-gradient(135deg, #f7f8fa 0%, #c3c9d1 30%, #8d949e 48%, #eef1f4 62%, #a9b0b9 100%);
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #121419; --fg: #eceef2; --muted: #9aa1ad; --line: #2a2e37; --chip: #1c1f26; color-scheme: dark } }
@@ -34,44 +37,55 @@ button:focus-visible { outline: 2px solid var(--chad); outline-offset: 2px }
 .toast { position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--fg); color: var(--bg); padding: 10px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; opacity: 0; transition: opacity .2s; pointer-events: none; z-index: 20 }
 .toast.on { opacity: 1 }
 
-/* ---------- Farbwelten ---------- */
-.wr { --acc: var(--chad); --ink: #fff; --box: rgba(255,255,255,.09); --boxline: rgba(255,255,255,.16); --track: rgba(255,255,255,.14) }
+/* ---------- Varianten ---------- */
+.wr { --acc: var(--chad);
+  --bg1: #1d2026; --bg2: #2e323b; --ink: #f3f4f6; --disp: #ffffff;
+  --hlbg: var(--acc); --hlfg: #ffffff; --widebg: var(--acc); --widefg: #ffffff;
+  --glow: rgba(255,255,255,.16); --box: rgba(255,255,255,.08); --boxline: rgba(255,255,255,.16); --track: rgba(255,255,255,.12);
+  --btnbg: var(--ink); --btnfg: var(--bg1) }
 .wr[data-type="chad"] { --acc: var(--chad) }
 .wr[data-type="alpha"] { --acc: var(--alpha) }
 .wr[data-type="soy"] { --acc: var(--soy) }
 .wr[data-type="gooner"] { --acc: var(--gooner) }
-.wr[data-pal="1"] { --bg1: #1d2026; --bg2: #2e323b; --ink: #f3f4f6 }
-.wr[data-pal="2"] { --bg1: #26313e; --bg2: #4b5e73; --ink: #f1f5f9 }
-.wr[data-pal="3"] { --bg1: var(--acc); --bg2: color-mix(in srgb, var(--acc) 55%, #000); --box: rgba(255,255,255,.16); --boxline: rgba(255,255,255,.28); --track: rgba(0,0,0,.22) }
-.wr[data-pal="4"] { --bg1: #0b0e2e; --bg2: #3a1868; --ink: #ffffff }
-.wr[data-pal="5"] { --bg1: #24080f; --bg2: #6e1a34; --ink: #fff3f5 }
+/* 2: Chrome-Schrift auf Anthrazit */
+.wr[data-v="2"] { --ink: #e6e9ee; --hlbg: var(--chrome-box); --hlfg: #15171c; --widebg: var(--chrome-box); --widefg: #15171c }
+/* 3: Silber-Hintergrund, dunkles Chrome */
+.wr[data-v="3"] { --bg1: #f1f3f6; --bg2: #9fa6b0; --ink: #1b1e24; --disp: #1b1e24;
+  --hlbg: #1b1e24; --hlfg: #f3f4f6; --widebg: #1b1e24; --widefg: #f3f4f6;
+  --glow: rgba(255,255,255,.75); --box: rgba(255,255,255,.4); --boxline: rgba(0,0,0,.12); --track: rgba(0,0,0,.1) }
+/* 4: Chrome auf Graphit, Typfarbe als Akzent */
+.wr[data-v="4"] { --bg1: #101215; --bg2: #26292f; --ink: #e6e9ee }
+/* 5: Gelbe Schrift */
+.wr[data-v="5"] { --disp: #ffd60a; --hlbg: #ffd60a; --hlfg: #15171c; --widebg: #ffd60a; --widefg: #15171c; --btnbg: #ffd60a; --btnfg: #15171c }
 
 /* ---------- Wrapped ---------- */
 .wr { position: absolute; inset: 0; container-type: size; color: var(--ink); font-family: var(--f-disp); overflow: hidden; cursor: pointer; user-select: none;
-  background: linear-gradient(160deg, var(--bg1) 0%, var(--bg2) 100%); transition: background .4s }
+  background: linear-gradient(160deg, var(--bg1) 0%, var(--bg2) 100%) }
+.disp { color: var(--disp) }
+.wr[data-chrome="light"] .disp, .wr[data-chrome="light"] .quote .ch { background-image: var(--chrome); -webkit-background-clip: text; background-clip: text; color: transparent }
+.wr[data-chrome="dark"] .disp, .wr[data-chrome="dark"] .quote .ch { background-image: var(--chrome-dark); -webkit-background-clip: text; background-clip: text; color: transparent }
+.quote .ch { color: var(--disp) }
 
-/* lebendiger Hintergrund */
+/* lebendiger Hintergrund, neutral ohne Farbschein */
 .bgl { position: absolute; inset: 0; pointer-events: none; overflow: hidden }
-.conic { position: absolute; width: 180cqh; height: 180cqh; left: 50%; top: 50%; margin: -90cqh 0 0 -90cqh; opacity: .18;
-  background: conic-gradient(from 0deg, transparent 0 20%, var(--acc) 30%, transparent 42% 62%, var(--ink) 70%, transparent 78%); animation: spin 28s linear infinite }
-.wr[data-pal="3"] .conic { background: conic-gradient(from 0deg, transparent 0 20%, #fff 30%, transparent 42% 62%, #000 70%, transparent 78%) }
-.orb { position: absolute; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--acc) 85%, transparent) 0%, transparent 68%) }
-.wr[data-pal="3"] .orb { background: radial-gradient(circle, rgba(255,255,255,.45) 0%, transparent 68%) }
+.conic { position: absolute; width: 180cqh; height: 180cqh; left: 50%; top: 50%; margin: -90cqh 0 0 -90cqh; opacity: .12;
+  background: conic-gradient(from 0deg, transparent 0 20%, var(--ink) 30%, transparent 42% 62%, var(--ink) 70%, transparent 78%); animation: spin 32s linear infinite }
+.orb { position: absolute; border-radius: 50%; background: radial-gradient(circle, var(--glow) 0%, transparent 68%) }
 .o1 { width: 80cqw; height: 80cqw; left: -25cqw; top: -15cqw; animation: float1 14s ease-in-out infinite }
-.o2 { width: 70cqw; height: 70cqw; right: -30cqw; bottom: 10cqh; animation: float2 17s ease-in-out infinite; opacity: .8 }
-.o3 { width: 45cqw; height: 45cqw; left: 30cqw; top: 55cqh; animation: float3 11s ease-in-out infinite; opacity: .6 }
-.ring { position: absolute; border-radius: 50%; border: 1.5px solid color-mix(in srgb, var(--ink) 22%, transparent) }
+.o2 { width: 70cqw; height: 70cqw; right: -30cqw; bottom: 10cqh; animation: float2 17s ease-in-out infinite }
+.o3 { width: 45cqw; height: 45cqw; left: 30cqw; top: 55cqh; animation: float3 11s ease-in-out infinite; opacity: .7 }
+.ring { position: absolute; border-radius: 50%; border: 1.5px solid color-mix(in srgb, var(--ink) 18%, transparent) }
 .r1 { width: 110cqw; height: 110cqw; right: -55cqw; top: -30cqw; animation: pulse 9s ease-in-out infinite }
 .r2 { width: 70cqw; height: 70cqw; left: -35cqw; bottom: -20cqw; border-style: dashed; animation: spin 40s linear infinite reverse }
-.dots { position: absolute; inset: -40px; opacity: .22; background-image: radial-gradient(color-mix(in srgb, var(--ink) 70%, transparent) 1px, transparent 1.6px); background-size: 18px 18px; animation: drift 20s linear infinite }
-.wave { position: absolute; left: 0; width: 200%; height: 40px; opacity: .35; animation: slide 10s linear infinite }
+.dots { position: absolute; inset: -40px; opacity: .18; background-image: radial-gradient(color-mix(in srgb, var(--ink) 70%, transparent) 1px, transparent 1.6px); background-size: 18px 18px; animation: drift 20s linear infinite }
+.wave { position: absolute; left: 0; width: 200%; height: 40px; opacity: .28; animation: slide 10s linear infinite }
 .wave path { fill: none; stroke: var(--ink); stroke-width: 1.5 }
-.w1 { top: 22cqh } .w2 { top: 78cqh; animation-duration: 14s; animation-direction: reverse; opacity: .25 }
-.spark { position: absolute; width: 10px; height: 10px; animation: twinkle 3s ease-in-out infinite }
-.spark::before, .spark::after { content: ""; position: absolute; background: var(--ink); left: 4px; top: 0; width: 2px; height: 10px; border-radius: 1px }
+.w1 { top: 22cqh } .w2 { top: 78cqh; animation-duration: 14s; animation-direction: reverse; opacity: .2 }
+.spark { position: absolute; width: 7px; height: 7px; animation: twinkle 5s ease-in-out infinite }
+.spark::before, .spark::after { content: ""; position: absolute; background: var(--ink); left: 3px; top: 0; width: 1.5px; height: 7px; border-radius: 1px }
 .spark::after { transform: rotate(90deg) }
 .sweep { position: absolute; top: -20%; bottom: -20%; width: 45%; left: -60%; z-index: 2; pointer-events: none;
-  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--ink) 30%, transparent), transparent); transform: skewX(-18deg); animation: sweep .7s ease-out forwards }
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--ink) 22%, transparent), transparent); transform: skewX(-18deg); animation: sweep .7s ease-out forwards }
 
 @keyframes spin { to { transform: rotate(360deg) } }
 @keyframes float1 { 0%,100% { transform: translate(0,0) scale(1) } 50% { transform: translate(18cqw,22cqh) scale(1.15) } }
@@ -80,7 +94,7 @@ button:focus-visible { outline: 2px solid var(--chad); outline-offset: 2px }
 @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1 } 50% { transform: scale(1.12); opacity: .4 } }
 @keyframes drift { to { transform: translate(18px, 36px) } }
 @keyframes slide { to { transform: translateX(-50%) } }
-@keyframes twinkle { 0%,100% { opacity: 0; transform: scale(.4) rotate(0) } 50% { opacity: .9; transform: scale(1) rotate(45deg) } }
+@keyframes twinkle { 0%,100% { opacity: 0; transform: scale(.4) rotate(0) } 50% { opacity: .6; transform: scale(1) rotate(45deg) } }
 @keyframes sweep { to { left: 120% } }
 
 /* Fortschritt und Folien */
@@ -89,59 +103,68 @@ button:focus-visible { outline: 2px solid var(--chad); outline-offset: 2px }
 .bars i.done { background: var(--ink) }
 .slide { position: absolute; inset: 0; z-index: 1; padding: 14cqw 7cqw 9cqw; display: flex; flex-direction: column; justify-content: center; gap: 4cqw }
 .slide > * { animation: rise .55s cubic-bezier(.2,.8,.2,1) both; animation-delay: calc(var(--d, 0) * 90ms) }
+.slide > .quote { animation: none }
 @keyframes rise { from { opacity: 0; transform: translateY(5cqw) } }
 .small { font-family: var(--f-ui); font-weight: 600; font-size: 4.6cqw; line-height: 1.4; margin: 0; text-wrap: balance; opacity: .9 }
 .big { font-weight: 900; font-size: 9cqw; line-height: 1.02; margin: 0; letter-spacing: -.02em; text-wrap: balance }
-.quote { font-weight: 900; font-size: min(8cqw, 5cqh); line-height: 1.12; margin: 0; letter-spacing: -.015em; text-wrap: balance }
 .huge { font-weight: 900; font-size: 15.5cqw; line-height: .95; margin: 0; letter-spacing: -.03em; overflow-wrap: anywhere }
 .count { font-weight: 900; font-size: 34cqw; line-height: .85; margin: 0 }
-.accent { color: var(--acc) }
-.wr[data-pal="3"] .accent { color: var(--ink) }
+
+/* Quote: Buchstaben fliegen einzeln rein, 1 bis 2 Wörter markiert */
+.quote { font-weight: 900; font-size: min(8.4cqw, 5.2cqh); line-height: 1.22; margin: 0; letter-spacing: -.015em }
+.quote .w { display: inline-block; white-space: nowrap; position: relative }
+.quote .ch { display: inline-block; animation: flyc .7s cubic-bezier(.2,.9,.25,1.15) both; animation-delay: calc(var(--n) * 32ms) }
+@keyframes flyc { from { opacity: 0; transform: translate(var(--x), var(--y)) rotate(var(--r)) scale(.3) } }
+.quote .hl { padding: 0 1.4cqw; margin: 0 -.6cqw; isolation: isolate }
+.quote .hl::before { content: ""; position: absolute; inset: 4% 0 2%; z-index: -1; border-radius: 1.4cqw; background: var(--hlbg); transform-origin: left; transform: scaleX(0); animation: mark .5s cubic-bezier(.3,.9,.3,1) forwards; animation-delay: var(--md) }
+.wr .quote .hl .ch { background-image: none; -webkit-background-clip: border-box; background-clip: border-box; color: var(--hlfg) }
+@keyframes mark { to { transform: scaleX(1) } }
 
 /* Eigenschaften mit Swoosh */
 .traits { display: grid; grid-template-columns: 1fr 1fr; gap: 2.6cqw }
 .trait { background: var(--box); border: 1px solid var(--boxline); border-radius: 3cqw; padding: 4cqw 3.6cqw; font-weight: 900; font-size: 5.4cqw; line-height: 1.1; overflow-wrap: anywhere;
   animation: swooshL .75s cubic-bezier(.16,1.2,.3,1) both; animation-delay: calc(250ms + var(--i) * 140ms); position: relative; overflow: hidden }
 .trait:nth-child(even) { animation-name: swooshR }
-.trait.wide { grid-column: 1 / -1; font-size: 6.4cqw; background: var(--acc); border-color: transparent; color: #fff }
-.wr[data-pal="3"] .trait.wide { background: var(--ink); color: var(--bg2) }
+.trait.wide { grid-column: 1 / -1; font-size: 6.4cqw; background: var(--widebg); border-color: transparent }
+.trait.wide span { color: var(--widefg); background: none; -webkit-background-clip: border-box; background-clip: border-box }
 .trait::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 20%, rgba(255,255,255,.35) 50%, transparent 80%); transform: translateX(-120%); animation: shine .9s ease-out both; animation-delay: calc(650ms + var(--i) * 140ms) }
-@keyframes swooshL { from { opacity: 0; transform: translateX(-110%) skewX(-22deg); filter: blur(6px) } 60% { filter: blur(0) } }
-@keyframes swooshR { from { opacity: 0; transform: translateX(110%) skewX(22deg); filter: blur(6px) } 60% { filter: blur(0) } }
+@keyframes swooshL { from { opacity: 0; transform: translateX(-110%) skewX(-22deg) } }
+@keyframes swooshR { from { opacity: 0; transform: translateX(110%) skewX(22deg) } }
 @keyframes shine { to { transform: translateX(120%) } }
 
-/* Split */
-.wsplit { position: relative; display: grid; gap: 3.4cqw }
-.wsplit .inner { display: grid; gap: 3.4cqw }
+/* Split: Karte plus farbige Balken */
+.wsplit { position: relative }
+.wsplit .inner { display: grid; gap: 6cqw }
+.bars4 { display: grid; gap: 2.8cqw }
 .wrow { display: grid; gap: 1.4cqw }
 .wrow .h { display: flex; justify-content: space-between; font-size: 4.4cqw; font-weight: 600 }
 .wrow .h b { font-variant-numeric: tabular-nums }
-.wrow .t { height: 3.6cqw; background: var(--track); border-radius: 2cqw; overflow: hidden }
-.wrow .t i { display: block; height: 100%; background: var(--c); border-radius: 2cqw; transform-origin: left; animation: grow 1s cubic-bezier(.2,.8,.2,1) both; animation-delay: calc(900ms + var(--i) * 120ms) }
-.wr[data-pal="3"] .wrow .t i { box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.75) }
 .wrow .h .dot { display: inline-block; width: 2.6cqw; height: 2.6cqw; border-radius: 50%; background: var(--c); margin-right: 1.6cqw; vertical-align: middle }
-
-/* Typ-Karte: 4 Ecken, dein Punkt */
-.map { position: relative; width: 64cqw; max-width: 100%; aspect-ratio: 1; align-self: center; border-radius: 2.4cqw; border: 1.5px solid var(--boxline);
+.wrow .t { height: 3.6cqw; background: var(--track); border-radius: 2cqw; overflow: hidden }
+.wrow .t i { display: block; height: 100%; background: var(--c); border-radius: 2cqw; transform-origin: left; animation: grow 1s cubic-bezier(.2,.8,.2,1) both; animation-delay: calc(500ms + var(--i) * 120ms) }
+@keyframes grow { from { transform: scaleX(0) } }
+.map { position: relative; width: 64cqw; max-width: 100%; aspect-ratio: 1; align-self: center; justify-self: center; border-radius: 2.4cqw; border: 1.5px solid var(--boxline);
   background:
     linear-gradient(var(--boxline), var(--boxline)) center / 1px 100% no-repeat,
     linear-gradient(var(--boxline), var(--boxline)) center / 100% 1px no-repeat,
     radial-gradient(color-mix(in srgb, var(--ink) 35%, transparent) .8px, transparent 1.3px) 0 0 / 8cqw 8cqw,
     var(--box) }
 .map .c { position: absolute; font-weight: 900; font-size: 3.3cqw; padding: 1.2cqw 2cqw; border-radius: 1.4cqw; background: var(--c); color: #fff; line-height: 1 }
-.wr[data-pal="3"] .map .c { box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.8) }
 .map .tl { left: -1.5cqw; top: -1.5cqw } .map .tr { right: -1.5cqw; top: -1.5cqw }
 .map .bl { left: -1.5cqw; bottom: -1.5cqw } .map .br { right: -1.5cqw; bottom: -1.5cqw }
+/* dein Punkt fliegt erst nach 2,5 Sekunden von oben außerhalb rein */
 .map .me { position: absolute; width: 4.4cqw; height: 4.4cqw; border-radius: 50%; background: var(--ink); transform: translate(-50%, -50%);
-  box-shadow: 0 0 0 1.4cqw color-mix(in srgb, var(--acc) 55%, transparent), 0 0 6cqw var(--acc); animation: land 1.1s cubic-bezier(.2,.9,.25,1.2) both; animation-delay: 350ms }
+  box-shadow: 0 0 0 1.4cqw color-mix(in srgb, var(--ink) 25%, transparent);
+  animation: flyin 1.3s cubic-bezier(.25,.9,.3,1.15) both; animation-delay: 2.5s }
 .map .me::after { content: "Du"; position: absolute; left: 50%; top: -6.4cqw; transform: translateX(-50%); font-family: var(--f-ui); font-weight: 800; font-size: 3.4cqw; color: var(--ink) }
-.map .me::before { content: ""; position: absolute; inset: -3cqw; border-radius: 50%; border: 1.5px solid var(--ink); animation: ping 2s ease-out infinite 1.4s; opacity: 0 }
-@keyframes land { from { left: 50%; top: 50%; opacity: 0 } }
+.map .me::before { content: ""; position: absolute; inset: -3cqw; border-radius: 50%; border: 1.5px solid var(--ink); opacity: 0; animation: ping 2s ease-out infinite 3.8s }
+@keyframes flyin {
+  0% { left: 130%; top: -70%; opacity: 0; transform: translate(-50%, -50%) scale(3) }
+  15% { opacity: 1 }
+  70% { transform: translate(-50%, -50%) scale(.85) }
+  100% { transform: translate(-50%, -50%) scale(1) } }
 @keyframes ping { from { transform: scale(.4); opacity: .8 } to { transform: scale(1.6); opacity: 0 } }
-@keyframes grow { from { transform: scaleX(0) } }
 .blur { filter: blur(2.2cqw) }
-.wsplit .inner { gap: 6cqw }
-.bars4 { display: grid; gap: 2.8cqw }
 .lock { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; gap: 2cqw }
 .lock b { font-size: 6cqw }
 .lock span { font-family: var(--f-ui); font-weight: 600; font-size: 4cqw; max-width: 70cqw; line-height: 1.4; justify-self: center }
@@ -149,20 +172,21 @@ button:focus-visible { outline: 2px solid var(--chad); outline-offset: 2px }
 /* Teilen */
 .actions { display: grid; gap: 2.4cqw; font-family: var(--f-ui) }
 .btn { font: 800 4.4cqw var(--f-ui); border: 0; cursor: pointer; padding: 3.8cqw; border-radius: 3cqw; width: 100% }
-.primary { background: var(--ink); color: var(--bg1) }
-.wr[data-pal="3"] .primary { color: var(--bg2) }
+.primary { background: var(--btnbg); color: var(--btnfg) }
+.wr[data-chrome="light"] .primary { background: var(--chrome-box); color: #15171c }
 .ghost { background: var(--box); color: var(--ink); border: 1px solid var(--boxline) }
 .hint { position: absolute; bottom: 3.5cqw; left: 0; right: 0; text-align: center; font: 600 3.2cqw var(--f-ui); opacity: .65; z-index: 3 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bgl *, .slide > *, .trait, .trait::after, .wrow .t i, .sweep { animation: none !important }
+  .bgl *, .slide > *, .trait, .trait::after, .wrow .t i, .sweep, .quote .ch, .map .me, .map .me::before { animation: none !important }
+  .quote .hl::before { animation: none; transform: none }
   .sweep { display: none }
 }
 </style>
 
 <div class="wrap">
   <header>
-    <h1>Ergebnisseite Wrapped: 5 Farbwelten</h1>
+    <h1>Ergebnisseite Wrapped: Anthrazit, Chrome, Gelb</h1>
     <p>Jedes Handy antippen, um durch die Seiten zu gehen. Typ und Freischalt-Zustand gelten für alle fünf. Prozentzahlen sind Beispiele.</p>
   </header>
 
@@ -194,31 +218,32 @@ button:focus-visible { outline: 2px solid var(--chad); outline-offset: 2px }
 <div class="toast" id="toast" role="status"></div>
 
 <script>
-const PALS = [
-  ["Anthrazit", "dunkel und ruhig"],
-  ["Graublau", "kühl, erwachsen"],
-  ["Vollfarbe", "jeder Typ in seiner Farbe"],
-  ["Mitternacht", "Navy bis Violett"],
-  ["Bordeaux", "dunkles Weinrot"]
+// [Name, Beschreibung, Chrome-Schrift]
+const VARS = [
+  ["Anthrazit", "Original, weiße Schrift", ""],
+  ["Chrome", "Silber-Schrift auf Anthrazit", "light"],
+  ["Silber", "heller Chrome-Grund, dunkle Schrift", "dark"],
+  ["Graphit", "Chrome plus Typfarbe als Akzent", "light"],
+  ["Gelb", "gelbe Schrift auf Anthrazit", ""]
 ];
 const TYPES = {
-  chad:   { name: "Chad",   quote: "Andere suchen das Rampenlicht. Dich findet es von allein.",
+  chad:   { name: "Chad",   quote: "Andere suchen das Rampenlicht. Dich findet es von allein.", hl: ["Rampenlicht."],
             traits: ["Souverän", "Stilvoll", "Gelassen", "Unbeeindruckt", "Magnetisch"],
             split: { chad: 58, alpha: 21, soy: 13, gooner: 8 } },
-  alpha:  { name: "Alpha",  quote: "Andere warten auf ihre Chance. Du nimmst sie dir.",
+  alpha:  { name: "Alpha",  quote: "Andere warten auf ihre Chance. Du nimmst sie dir.", hl: ["nimmst"],
             traits: ["Dominant", "Ehrgeizig", "Laut", "Unaufhaltsam", "Immer im Wettkampf"],
             split: { chad: 24, alpha: 54, soy: 7, gooner: 15 } },
-  soy:    { name: "SoyBoy", quote: "Die Welt braucht Helden. Und jemanden, der danach aufräumt.",
+  soy:    { name: "SoyBoy", quote: "Die Welt braucht Helden. Und jemanden, der danach aufräumt.", hl: ["aufräumt."],
             traits: ["Zuverlässig", "Leise", "Pünktlich", "Harmonisch", "Unsichtbar"],
             split: { chad: 12, alpha: 6, soy: 61, gooner: 21 } },
-  gooner: { name: "Gooner", quote: "Die Welt dreht sich weiter. Nur eben ohne dich.",
+  gooner: { name: "Gooner", quote: "Die Welt dreht sich weiter. Nur eben ohne dich.", hl: ["ohne", "dich."],
             traits: ["Nachtaktiv", "Unerreichbar", "Eigenbrötler", "Ausdauernd", "Offline für die Welt"],
             split: { chad: 5, alpha: 11, soy: 19, gooner: 65 } }
 };
 const ORDER = ["chad", "alpha", "soy", "gooner"];
-const N = 6;
+const N = 5;
 let cur = "chad", locked = true;
-const slides = PALS.map(() => 0);
+const slides = VARS.map(() => 0);
 
 const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const sorted = t => ORDER.slice().sort((a, b) => TYPES[t].split[b] - TYPES[t].split[a]);
@@ -231,6 +256,25 @@ function spot(t) {
   const c = v => Math.round(Math.min(90, Math.max(10, v / sw * 100)));
   return [c(sx), c(sy)];
 }
+const rnd = (a, b) => (a + Math.random() * (b - a)).toFixed(1);
+
+// Jeder Buchstabe bekommt eine eigene Startposition und fliegt einzeln rein.
+function flyQuote(t) {
+  const T = TYPES[t];
+  const words = `„${T.quote}“`.split(" ");
+  let n = 0, html = "", markAt = 0;
+  words.forEach((w, wi) => {
+    const clean = w.replace(/[„“]/g, "");
+    const hl = T.hl.includes(clean);
+    const chars = [...w].map(ch => {
+      const s = `<span class="ch" style="--n:${n};--x:${rnd(-60, 60)}cqw;--y:${rnd(-80, 80)}cqh;--r:${rnd(-180, 180)}deg">${esc(ch)}</span>`;
+      n++; return s;
+    }).join("");
+    if (hl) markAt = n;
+    html += `<span class="w${hl ? " hl" : ""}"${hl ? ` style="--md:calc(${markAt} * 32ms + 600ms)"` : ""}>${chars}</span>${wi < words.length - 1 ? " " : ""}`;
+  });
+  return `<p class="quote" aria-label="${esc(T.quote)}">${html}</p>`;
+}
 
 function toast(msg) {
   const el = document.getElementById("toast");
@@ -239,7 +283,7 @@ function toast(msg) {
 }
 
 const WAVE = `<svg class="wave" viewBox="0 0 400 40" preserveAspectRatio="none"><path d="M0 20 Q25 0 50 20 T100 20 T150 20 T200 20 T250 20 T300 20 T350 20 T400 20"/></svg>`;
-const SPARKS = [[12, 30, 0], [78, 14, .8], [86, 52, 1.6], [20, 70, 2.2], [60, 88, 1.1], [44, 40, 2.6]]
+const SPARKS = [[80, 16, 0], [18, 74, 2.5]]
   .map(([x, y, d]) => `<i class="spark" style="left:${x}%;top:${y}%;animation-delay:${d}s"></i>`).join("");
 const BG = `<div class="bgl" aria-hidden="true"><div class="conic"></div><div class="dots"></div>
   <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
@@ -249,12 +293,10 @@ const BG = `<div class="bgl" aria-hidden="true"><div class="conic"></div><div cl
 function slideHtml(t, s) {
   const T = TYPES[t];
   switch (s) {
-    case 0: return `<p class="small">Wir haben jede deiner Antworten ausgewertet.</p><p class="count accent" style="--d:1">36</p><p class="big" style="--d:2">Antworten. Ein Urteil.</p>`;
-    case 1: return `<p class="small">Bereit? Du bist ein ...</p><p class="huge" style="--d:2">${T.name}</p>`;
-    case 2: return `<p class="quote">„${esc(T.quote)}“</p>`;
-    case 3: return `<p class="small">Das macht dich aus</p><div class="traits">${
-      T.traits.map((x, i) => `<div class="trait${i === T.traits.length - 1 ? " wide" : ""}" style="--i:${i}">${esc(x)}</div>`).join("")}</div>`;
-    case 4: {
+    case 0: return `<p class="small">Wir haben jede deiner Antworten ausgewertet.</p><p class="count disp" style="--d:1">36</p><p class="big disp" style="--d:2">Antworten. Ein Urteil.</p>`;
+    case 1: return `<p class="small">Bereit? Du bist ein ...</p><p class="huge disp" style="--d:2">${T.name}</p>`;
+    case 2: return flyQuote(t);
+    case 3: {
       const [x, y] = spot(t);
       const corner = (k, cls) => `<span class="c ${cls}" style="--c:var(--${k})">${TYPES[k].name}</span>`;
       return `<p class="small">Dein voller Split</p><div class="wsplit" style="--d:1"><div class="inner${locked ? " blur" : ""}">
@@ -262,7 +304,7 @@ function slideHtml(t, s) {
         <div class="bars4">${sorted(t).map((k, i) => `<div class="wrow" style="--c:var(--${k})"><div class="h"><span><i class="dot"></i>${TYPES[k].name}</span><b>${T.split[k]}%</b></div><div class="t"><i style="width:${T.split[k]}%;--i:${i}"></i></div></div>`).join("")}</div>
       </div>${locked ? `<div class="lock"><b>Noch geheim</b><span>Einer muss deinen Link öffnen. Dann siehst du alles.</span></div>` : ""}</div>`;
     }
-    default: return `<p class="big">Was sind deine Freunde?</p><div class="actions" style="--d:1"><button class="btn primary" data-act="share">Link teilen</button><button class="btn ghost" data-act="story">Story-Bild</button><button class="btn ghost" data-act="copy">Link kopieren</button></div>`;
+    default: return `<p class="big disp">Was sind deine Freunde?</p><div class="actions" style="--d:1"><button class="btn primary" data-act="share">Link teilen</button><button class="btn ghost" data-act="story">Story-Bild</button><button class="btn ghost" data-act="copy">Link kopieren</button></div>`;
   }
 }
 
@@ -277,15 +319,15 @@ function paintSlide(p, sweep) {
 }
 
 function build() {
-  document.getElementById("grid").innerHTML = PALS.map(([n, d], p) => `
+  document.getElementById("grid").innerHTML = VARS.map(([n, d, chrome], p) => `
     <section class="col"><h2>${p + 1}. ${n} <span>· ${d}</span></h2>
-      <div class="phone"><div class="wr" id="wr${p}" data-pal="${p + 1}" data-type="${cur}" data-p="${p}" role="button" tabindex="0" aria-label="${n}: nächste Seite">
+      <div class="phone"><div class="wr" id="wr${p}" data-v="${p + 1}" data-chrome="${chrome}" data-type="${cur}" data-p="${p}" role="button" tabindex="0" aria-label="${n}: nächste Seite">
         ${BG}<div class="bars"></div><div class="stage"></div><div class="hint"></div>
       </div></div></section>`).join("");
-  PALS.forEach((_, p) => paintSlide(p, false));
+  VARS.forEach((_, p) => paintSlide(p, false));
 }
 
-function all(fn) { PALS.forEach((_, p) => { fn(p); paintSlide(p, true); }); }
+function all(fn) { VARS.forEach((_, p) => { fn(p); paintSlide(p, true); }); }
 
 document.getElementById("typeSeg").addEventListener("click", e => {
   const b = e.target.closest("button"); if (!b) return;
