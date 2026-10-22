@@ -1,14 +1,14 @@
 # Ergebnistexte
 
-Pro Typ: Titel, Spruch, kurzer Text, Teilen-Text. Keine Tipps.
+Pro Typ: Spruch, kurzer Text, Teilen-Text. Keine Tipps. Keine Details aus den Fragen, lieber Dramatik.
 
 ---
 
 ## Chad
 
-**Spruch:** Du musst nicht laut sein. Der Raum dreht sich trotzdem um.
+**Spruch:** Andere suchen das Rampenlicht. Dich findet es von allein.
 
-Anzug sitzt, Steak medium, Champagner an Silvester. Du antwortest nach einem Tag und keiner nimmt es dir übel. Du hast die Ideen, andere machen die Arbeit. Dein Idol bist du selbst, und ehrlich gesagt verständlich. Aura farmst du nicht. Du hast sie einfach.
+Wenn du einen Raum betrittst, wird es kurz still. Nicht weil du laut bist, sondern weil alle spüren, dass gerade jemand angekommen ist. Du jagst nichts hinterher. Die Dinge kommen zu dir, und du entscheidest in aller Ruhe, was davon bleiben darf. Andere nennen das Glück. Für dich ist es ein ganz normaler Tag.
 
 **Teilen:** Ich bin Chad. Was bist du?
 
@@ -16,9 +16,9 @@ Anzug sitzt, Steak medium, Champagner an Silvester. Du antwortest nach einem Tag
 
 ## Alpha
 
-**Spruch:** Leise sein ist was für andere.
+**Spruch:** Andere warten auf ihre Chance. Du nimmst sie dir.
 
-AMG, Gucci-Cap, Marlboro Rot. Um 5:30 Uhr wach, um 5:31 Uhr schon am Kommandieren. Mit dem Kontrolleur wird diskutiert, in der Schlange wird nicht gewartet. Dubai ist kein Urlaub, Dubai ist ein Lebensgefühl. Du willst immer gewinnen. Auch Gespräche, die gar kein Wettbewerb waren.
+Du bist nicht Teil der Gruppe. Du bist der Grund, warum es sie gibt. Jeder Raum ist ein Revier, jedes Gespräch ein Duell, jeder Tag eine Schlacht, die gewonnen werden will. Ruhe kennst du nur vom Hörensagen. Und genau deshalb vergisst niemand deinen Namen. Ob er will oder nicht.
 
 **Teilen:** Ich bin Alpha. Was bist du?
 
@@ -26,9 +26,9 @@ AMG, Gucci-Cap, Marlboro Rot. Um 5:30 Uhr wach, um 5:31 Uhr schon am Kommandiere
 
 ## SoyBoy
 
-**Spruch:** Niemand hat was gegen dich. Niemand hat überhaupt was zu dir.
+**Spruch:** Die Welt braucht Helden. Und jemanden, der danach aufräumt.
 
-Weißes Shirt, Jeans, Stofftasche, Fahrrad. Du zahlst das Ticket, bleibst ruhig in der Schlange und antwortest sofort. Radler statt Bier, Signal statt WhatsApp. Du bist der zuverlässigste Mensch der Stadt. Leider auch der, den man am schnellsten vergisst.
+Du bist der, der bleibt, wenn alle anderen längst gegangen sind. Kein Drama, kein Risiko, keine Szene. Während andere Geschichte schreiben, liest du sie. Leise, pünktlich, gewissenhaft. Es gibt niemanden, auf den man sich mehr verlassen kann. Es gibt nur leider auch niemanden, der es bemerkt.
 
 **Teilen:** Ich bin SoyBoy. Was bist du?
 
@@ -36,8 +36,8 @@ Weißes Shirt, Jeans, Stofftasche, Fahrrad. Du zahlst das Ticket, bleibst ruhig 
 
 ## Gooner
 
-**Spruch:** Draußen ist auch nur ein Level ohne Respawn.
+**Spruch:** Die Welt dreht sich weiter. Nur eben ohne dich.
 
-Über 7 Stunden Bildschirmzeit, Monster in der Hand, Discord immer offen. Aufstehen um 14 Uhr, zocken bis die Sonne wieder kommt. Du schreibst zuerst, aber nur im Discord. Dein Zimmer ist dein Königreich, der Hamster dein einziger Mitbewohner.
+Irgendwo hinter verschlossenen Rollläden brennt ein einsames Licht. Dort sitzt du. Tage verschwimmen, Nächte werden zu Morgen, und die Welt da draußen ist nur noch ein Gerücht. Du hast dir dein eigenes Reich gebaut. Es ist klein, es ist dunkel, und niemand kommt rein. Genau so, wie du es willst.
 
 **Teilen:** Ich bin Gooner. Was bist du?
