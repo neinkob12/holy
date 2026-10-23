@@ -31,6 +31,7 @@ Ohne Upstash läuft die Seite trotzdem, zeigt das Ergebnis dann aber nur auf dem
 | `api/` | Vercel Functions: `/api/result` (anlegen, lesen), `/api/visit` (Besuch zählen) |
 | `docs/` | Konzept, Fragenkatalog, Ergebnistexte |
 | `prototypes/` | Design-Entwürfe der Ergebnisseite |
+| `public/img/q/` | Fotos der Bildfragen, Nachweise in `credits.json`. Nach Änderungen `node scripts/build-credits.mjs` |
 
 Daten in Redis, alles läuft nach 180 Tagen ab:
 `res:<id>` Ergebnis, `vis:<id>` Geräte, die den Link geöffnet haben, `fr:<id>` Ergebnisse von Freunden über diesen Link.

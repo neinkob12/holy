@@ -1,7 +1,7 @@
 import type { Mode, TypeKey } from "../../shared/score";
-import { QUESTIONS } from "../content/questions";
+import { QUESTIONS, type Question } from "../content/questions";
 import { S } from "../content/strings";
-import { esc, stage, sweep } from "./dom";
+import { esc, setScene, stage, sweep } from "./dom";
 import { answerOrder, selectQuestions } from "./select";
 
 /** Fragt alle Fragen nacheinander ab und gibt die gewählten Typen zurück. */
@@ -16,6 +16,7 @@ export function runQuiz(mode: Mode): Promise<TypeKey[]> {
       const i = picks.length;
       const q = questions[i];
       const n = questions.length;
+      setScene(i + 2);
       stage().innerHTML = `<section class="screen quiz">
         <div class="qtop">
           <div class="progress" aria-hidden="true"><i style="width:${(i / n) * 100}%"></i></div>
@@ -23,8 +24,9 @@ export function runQuiz(mode: Mode): Promise<TypeKey[]> {
         </div>
         <div class="qbody">
           <h2 class="qtext">${esc(q.text)}</h2>
-          <div class="answers">${orders[i].map((k, j) =>
-            `<button class="answer" data-pick="${k}" style="--i:${j}">${esc(q.answers[k])}</button>`).join("")}</div>
+          <div class="answers">${orders[i].map((k, j) => q.images
+            ? `<button class="answer tile" data-pick="${k}" style="--i:${j}"><img src="${q.images[k]}" alt="" loading="eager" decoding="async"><span>${esc(q.answers[k])}</span></button>`
+            : `<button class="answer tile text" data-pick="${k}" style="--i:${j}"><span>${esc(q.answers[k])}</span></button>`).join("")}</div>
         </div>
       </section>`;
       busy = false;
@@ -46,5 +48,11 @@ export function runQuiz(mode: Mode): Promise<TypeKey[]> {
       }, 260);
     };
     paint();
+    preload(questions.slice(1));
   });
+}
+
+/** Bilder der nächsten Fragen schon mal laden, damit die Kacheln sofort da sind. */
+function preload(qs: Question[]): void {
+  for (const q of qs) if (q.images) for (const src of Object.values(q.images)) { const img = new Image(); img.src = src; }
 }

@@ -15,12 +15,24 @@ export function toast(msg: string): void {
 const WAVE = (cls: string) =>
   `<svg class="wave ${cls}" viewBox="0 0 400 40" preserveAspectRatio="none"><path d="M0 20 Q25 0 50 20 T100 20 T150 20 T200 20 T250 20 T300 20 T350 20 T400 20"/></svg>`;
 
-/** Bewegter Hintergrund, bleibt beim Seitenwechsel stehen. */
-export const BACKGROUND = `<div class="bgl" aria-hidden="true"><div class="conic"></div><div class="dots"></div>
-  <div class="orb o1"></div><div class="orb o2"></div><div class="ring r1"></div><div class="ring r2"></div>
+/**
+ * Bewegter Hintergrund, bleibt beim Seitenwechsel stehen.
+ * Die Hüllen (.mv) wandern je Szene an neue Stellen, siehe setScene.
+ */
+export const BACKGROUND = `<div class="bgl" aria-hidden="true"><div class="wash"></div><div class="tint"></div><div class="conic"></div><div class="dots"></div>
+  <div class="mv m1"><div class="orb o1"></div></div><div class="mv m2"><div class="orb o2"></div></div>
+  <div class="mv m3"><div class="ring r1"></div></div><div class="mv m4"><div class="ring r2"></div></div>
+  <div class="mv m5"><div class="shape"></div></div><div class="mv m6"><div class="stripes"></div></div>
   ${WAVE("w1")}${WAVE("w2")}
   <i class="spark" style="left:80%;top:16%"></i><i class="spark" style="left:18%;top:74%;animation-delay:2.5s"></i>
   <div class="shimmer"></div></div>`;
+
+export const SCENES = 6;
+
+/** Neue Szene: Formen im Hintergrund gleiten an andere Stellen. */
+export function setScene(n: number): void {
+  app().dataset.scene = String(((n % SCENES) + SCENES) % SCENES);
+}
 
 /** Hintergrund einmal anlegen, Inhalt darüber austauschen. */
 export function stage(): HTMLElement {

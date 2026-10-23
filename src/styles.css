@@ -4,7 +4,7 @@
   --ink: #f3f4f6; --disp: #ffffff;
   --chad: #3d6bff; --alpha: #ff3b3b; --soy: #3fae7c; --gooner: #9a5cff;
   --acc: var(--chad);
-  --glow: rgba(255,255,255,.12); --box: rgba(255,255,255,.07); --boxline: rgba(255,255,255,.16); --track: rgba(255,255,255,.12);
+  --glow: rgba(255,255,255,.17); --box: rgba(255,255,255,.07); --boxline: rgba(255,255,255,.16); --track: rgba(255,255,255,.12);
   --frame: rgba(255,255,255,.7); --shim: rgba(255,255,255,.06);
   --f-ui: "Manrope", system-ui, sans-serif;
   --f-disp: "Unbounded", "Arial Black", sans-serif;
@@ -26,13 +26,35 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--ink); outline-o
 
 /* ---------- lebendiger Hintergrund ---------- */
 .bgl { position: absolute; inset: 0; pointer-events: none; overflow: hidden }
+/* Szenen: bei jedem Screen gleiten die Formen an neue Stellen */
+.mv { position: absolute; inset: 0; transition: transform 1.8s cubic-bezier(.6,0,.2,1), opacity 1.4s ease; will-change: transform }
+.m1 { transform: var(--m1) } .m2 { transform: var(--m2) } .m3 { transform: var(--m3) }
+.m4 { transform: var(--m4) } .m5 { transform: var(--m5) } .m6 { transform: var(--m6); opacity: var(--o6) }
+.wash { position: absolute; inset: 0; background: var(--wash); transition: background-color 1.8s ease }
+.tint { position: absolute; width: 150cqh; height: 150cqh; left: 50%; top: 50%; margin: -75cqh 0 0 -75cqh; transform: var(--tt); transition: transform 2s cubic-bezier(.6,0,.2,1), opacity 1.6s; opacity: var(--to);
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,.16) 0%, transparent 45%) }
+.shape { position: absolute; width: 74cqw; height: 74cqw; left: 13cqw; top: 50%; margin-top: -37cqw; border: 2px solid color-mix(in srgb, var(--ink) 26%, transparent);
+  border-radius: var(--sr); transition: border-radius 1.8s cubic-bezier(.6,0,.2,1) }
+.stripes { position: absolute; left: -50%; width: 200%; top: 40%; height: 26cqh; transform: rotate(-14deg);
+  background: repeating-linear-gradient(90deg, color-mix(in srgb, var(--ink) 12%, transparent) 0 2px, transparent 2px 22px) }
+.app { --wash: transparent; --m1: translate(0,0); --m2: translate(0,0); --m3: translate(0,0); --m4: translate(0,0); --m5: rotate(0) scale(1); --m6: translate(0,0); --o6: 0; --sr: 50%; --tt: translate(-20cqw,-30cqh); --to: 1 }
+.app[data-scene="1"] { --wash: rgba(96,140,120,.16); --m1: translate(55cqw,25cqh) scale(1.2); --m2: translate(-40cqw,-50cqh); --m3: translate(-60cqw,40cqh) scale(.8); --m4: translate(70cqw,-10cqh) rotate(90deg);
+  --m5: rotate(45deg) scale(.8); --sr: 6cqw; --m6: translate(0,-20cqh); --o6: 1; --tt: translate(25cqw,10cqh) }
+.app[data-scene="2"] { --wash: rgba(84,104,150,.18); --m1: translate(20cqw,60cqh) scale(.9); --m2: translate(-10cqw,-20cqh) scale(1.3); --m3: translate(-20cqw,70cqh) scale(1.1); --m4: translate(40cqw,-60cqh);
+  --m5: translate(0,-22cqh) rotate(-12deg) scale(.55); --sr: 2cqw; --m6: translate(0,30cqh) rotate(20deg); --o6: .6; --tt: translate(-30cqw,35cqh) }
+.app[data-scene="3"] { --wash: rgba(130,112,150,.14); --m1: translate(60cqw,-5cqh) scale(.8); --m2: translate(-55cqw,10cqh) scale(1.1); --m3: translate(-10cqw,10cqh) scale(1.4); --m4: translate(30cqw,20cqh) rotate(180deg);
+  --m5: translate(0,18cqh) rotate(90deg) scale(1.15); --sr: 50%; --m6: translate(0,-40cqh); --o6: 0; --tt: translate(30cqw,-35cqh) }
+.app[data-scene="4"] { --wash: rgba(70,124,132,.17); --m1: translate(10cqw,35cqh) scale(1.35); --m2: translate(-30cqw,-70cqh) scale(.9); --m3: translate(-70cqw,-10cqh); --m4: translate(80cqw,40cqh) rotate(-90deg) scale(1.3);
+  --m5: translate(-8cqw,-12cqh) rotate(135deg) scale(.9); --sr: 18cqw; --m6: translate(0,10cqh) rotate(-30deg); --o6: .8; --tt: translate(-10cqw,0) }
+.app[data-scene="5"] { --wash: rgba(120,128,140,.14); --m1: translate(-10cqw,-10cqh) scale(.7); --m2: translate(20cqw,-35cqh) scale(1.4); --m3: translate(-35cqw,25cqh) scale(.7); --m4: translate(10cqw,-30cqh) rotate(45deg);
+  --m5: translate(6cqw,25cqh) rotate(-45deg) scale(.7); --sr: 0; --m6: translate(0,45cqh) rotate(8deg); --o6: .5; --tt: translate(20cqw,45cqh) }
 .shimmer { position: absolute; inset: -50%; background: linear-gradient(115deg, transparent 42%, var(--shim) 50%, transparent 58%); animation: shim 9s ease-in-out infinite }
 .conic { position: absolute; width: 180cqh; height: 180cqh; left: 50%; top: 50%; margin: -90cqh 0 0 -90cqh; opacity: .07;
   background: conic-gradient(from 0deg, transparent 0 20%, var(--ink) 30%, transparent 42% 62%, var(--ink) 70%, transparent 78%); animation: spin 36s linear infinite }
 .orb { position: absolute; border-radius: 50%; background: radial-gradient(circle, var(--glow) 0%, transparent 68%) }
 .o1 { width: 80cqw; height: 80cqw; left: -25cqw; top: -15cqw; animation: float1 14s ease-in-out infinite }
 .o2 { width: 70cqw; height: 70cqw; right: -30cqw; bottom: 10cqh; animation: float2 17s ease-in-out infinite }
-.ring { position: absolute; border-radius: 50%; border: 1.5px solid color-mix(in srgb, var(--ink) 14%, transparent) }
+.ring { position: absolute; border-radius: 50%; border: 1.5px solid color-mix(in srgb, var(--ink) 20%, transparent) }
 .r1 { width: 110cqw; height: 110cqw; right: -55cqw; top: -30cqw; animation: pulse 9s ease-in-out infinite }
 .r2 { width: 70cqw; height: 70cqw; left: -35cqw; bottom: -20cqw; border-style: dashed; animation: spin 40s linear infinite reverse }
 .dots { position: absolute; inset: -40px; opacity: .14; background-image: radial-gradient(color-mix(in srgb, var(--ink) 70%, transparent) 1px, transparent 1.6px); background-size: 18px 18px; animation: drift 20s linear infinite }
@@ -84,6 +106,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--ink); outline-o
 .mode b { font: 900 5.6cqw var(--f-disp); letter-spacing: -.01em }
 .mode span { font: 600 3.8cqw var(--f-ui); opacity: .75 }
 .fine { font: 600 3.4cqw var(--f-ui); opacity: .55; margin: 0 }
+.fine a { color: inherit; pointer-events: auto }
 
 /* ---------- Fragen ---------- */
 .quiz { justify-content: flex-start; gap: 0 }
@@ -94,13 +117,27 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--ink); outline-o
 .qmeta .link { padding: 0 }
 .qbody { display: flex; flex-direction: column; gap: 6cqw; margin-bottom: auto; padding-top: 6cqw }
 .qtext { font-family: var(--f-disp); font-weight: 900; font-size: min(7.2cqw, 4.6cqh); hyphens: auto; -webkit-hyphens: auto; overflow-wrap: anywhere; line-height: 1.12; margin: 0; letter-spacing: -.015em; text-wrap: balance }
-.answers { display: grid; gap: 2.6cqw }
+.answers { display: grid; grid-template-columns: 1fr 1fr; gap: 2.6cqw }
 .answer { text-align: left; padding: 4.2cqw 4.6cqw; border-radius: 3cqw; border: 1px solid var(--boxline); background: var(--box); color: var(--ink);
   font: 700 4.4cqw/1.3 var(--f-ui); cursor: pointer; transition: transform .15s, background .15s;
   animation: ansin .5s cubic-bezier(.2,1.1,.3,1) both; animation-delay: calc(120ms + var(--i) * 70ms) }
 .answer:active { transform: scale(.98) }
 .answer.picked { background: var(--ink); color: var(--bg1); border-color: transparent }
 @keyframes ansin { from { opacity: 0; transform: translateX(14cqw) } }
+/* Antworten immer als 2x2-Kacheln: mit Foto (Text unten drauf) oder als Text-Kachel */
+.tile { position: relative; padding: 0; aspect-ratio: 1; overflow: hidden; display: block; border-radius: 3cqw }
+.tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease }
+.tile span { position: absolute; left: 0; right: 0; bottom: 0; padding: 6cqw 2.6cqw 2.4cqw; font: 800 3.6cqw/1.2 var(--f-ui); color: #fff;
+  background: linear-gradient(transparent, rgba(0,0,0,.78)); text-align: left }
+.tile.picked { outline: 3px solid var(--ink); outline-offset: -3px; background: var(--box) }
+.tile.picked img { transform: scale(1.06) }
+.tile.text { display: flex; align-items: flex-end; padding: 4cqw; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  background: linear-gradient(150deg, color-mix(in srgb, var(--ink) 12%, transparent) 0%, var(--box) 55%) }
+.tile.text::before { content: ""; position: absolute; right: -10cqw; top: -10cqw; width: 26cqw; height: 26cqw; border-radius: 50%;
+  border: 1.5px solid color-mix(in srgb, var(--ink) 16%, transparent) }
+.tile.text span { position: static; padding: 0; background: none; font: 800 4.4cqw/1.22 var(--f-ui); color: var(--ink); text-wrap: balance; overflow-wrap: anywhere; hyphens: auto }
+.tile.text.picked { background: var(--ink) }
+.tile.text.picked span { color: var(--bg1) }
 .loading { display: grid; justify-items: center; gap: 5cqw }
 .spinner { width: 14cqw; height: 14cqw; border-radius: 50%; border: 1.2cqw solid color-mix(in srgb, var(--ink) 20%, transparent); border-top-color: var(--ink); animation: spin 0.9s linear infinite }
 
@@ -174,8 +211,9 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--ink); outline-o
 .pill { font: 900 3.4cqw/1 var(--f-disp); padding: 1.6cqw 2.6cqw; border-radius: 99px; background: var(--c); color: #fff }
 
 @media (prefers-reduced-motion: reduce) {
-  .bgl *, .screen > *, .wrow .t i, .sweep, .quote .w, .me, .me::before, .typed .tc, .typed .caret, .answer, .huge { animation: none !important }
+  .bgl *, .mv, .tint, .wash, .screen > *, .wrow .t i, .sweep, .quote .w, .me, .me::before, .typed .tc, .typed .caret, .answer, .huge { animation: none !important }
   .typed .tc { opacity: 1 }
+  .mv, .tint, .shape, .wash { transition: none }
   .quote .hl::before { animation: none; transform: none }
   .sweep { display: none }
 }

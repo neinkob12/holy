@@ -7,6 +7,8 @@ export interface Question {
   /** Fragen derselben Gruppe kommen nie zusammen in einen Test. */
   group?: string;
   answers: Record<TypeKey, string>;
+  /** Bildfrage: je Antwort ein Foto, angezeigt als 2x2-Kacheln. */
+  images?: Record<TypeKey, string>;
 }
 
 export const QUESTIONS: Question[] = [
@@ -53,3 +55,12 @@ export const QUESTIONS: Question[] = [
   { id: "N15", text: "Welches Haustier?", answers: { chad: "Golden Retriever", alpha: "Rottweiler", soy: "Katze", gooner: "Hamster" } },
   { id: "N16", text: "Wie bezahlst du?", answers: { chad: "Apple Pay", alpha: "Bargeld aus der Rolle", soy: "Mit Münzen", gooner: "PayPal von Mama" } }
 ];
+
+/** Fragen mit Fotos (frei lizenziert, Nachweise in public/img/q/credits.json, öffentlich unter /bildnachweise.html). */
+export const IMAGE_QUESTIONS: string[] = ["N15", "Q05", "Q20", "Q03", "Q22", "A05", "Q02", "Q06", "Q10", "Q16", "Q19", "N06", "N09"];
+
+for (const q of QUESTIONS) {
+  if (IMAGE_QUESTIONS.includes(q.id)) {
+    q.images = { chad: `/img/q/${q.id}-chad.jpg`, alpha: `/img/q/${q.id}-alpha.jpg`, soy: `/img/q/${q.id}-soy.jpg`, gooner: `/img/q/${q.id}-gooner.jpg` };
+  }
+}

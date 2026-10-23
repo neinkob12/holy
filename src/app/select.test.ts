@@ -27,3 +27,14 @@ describe("Fragenauswahl", () => {
     expect(new Set(qs.map(q => q.id)).size).toBe(10);
   });
 });
+
+describe("Bildfragen", () => {
+  it("jede Bildfrage hat für alle 4 Typen eine Bilddatei", async () => {
+    const { existsSync } = await import("node:fs");
+    const withImages = QUESTIONS.filter(q => q.images);
+    expect(withImages.length).toBeGreaterThan(0);
+    for (const q of withImages) {
+      for (const src of Object.values(q.images ?? {})) expect(existsSync(`public${src}`), src).toBe(true);
+    }
+  });
+});

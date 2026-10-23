@@ -1,7 +1,7 @@
 # Fragenkatalog (final)
 
 C = Chad, A = Alpha, S = SoyBoy, G = Gooner. Im Test wird die Reihenfolge der Antworten gemischt.
-🖼️ = Bildfrage (4 Bilder statt Text).
+🖼️ = ursprünglich als Bildfrage geplant. Welche Fragen Fotos haben, steht in `IMAGE_QUESTIONS` in `src/content/questions.ts`.
 
 **Regel:** Fragen aus derselben Überlappungsgruppe (siehe unten) kommen nie zusammen in einen Test.
 
