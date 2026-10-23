@@ -57,7 +57,7 @@ export const QUESTIONS: Question[] = [
 ];
 
 /** Fragen mit Fotos (gemeinfrei, Quellen in public/img/q/QUELLEN.md). */
-export const IMAGE_QUESTIONS: string[] = [];
+export const IMAGE_QUESTIONS: string[] = ["N15", "Q05", "Q20", "Q03", "Q22"];
 
 for (const q of QUESTIONS) {
   if (IMAGE_QUESTIONS.includes(q.id)) {
