@@ -106,6 +106,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--ink); outline-o
 .mode b { font: 900 5.6cqw var(--f-disp); letter-spacing: -.01em }
 .mode span { font: 600 3.8cqw var(--f-ui); opacity: .75 }
 .fine { font: 600 3.4cqw var(--f-ui); opacity: .55; margin: 0 }
+.fine a { color: inherit; pointer-events: auto }
 
 /* ---------- Fragen ---------- */
 .quiz { justify-content: flex-start; gap: 0 }

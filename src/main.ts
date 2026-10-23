@@ -31,7 +31,7 @@ function start(): void {
     <h1 class="title">${TYPE_KEYS.map(k => `<span class="t ${k}">${TYPES[k].name}${k === "gooner" ? "?" : ""}</span>`).join("")}</h1>
     <p class="small" style="--d:1">${S.startLead}</p>
     ${modeButtons(2)}
-    <p class="fine" style="--d:3">${S.disclaimer}</p></section>`;
+    <p class="fine" style="--d:3">${S.disclaimer} · <a href="/bildnachweise.html">${S.credits}</a></p></section>`;
   bindModes();
 }
 

@@ -7,6 +7,7 @@ export const S = {
   modeLong: "Komplett",
   modeLongSub: "36 Fragen · 7 Min",
   disclaimer: "Nur Spaß. Keine Wissenschaft.",
+  credits: "Bildnachweise",
   questionOf: (i: number, n: number) => `Frage ${i} von ${n}`,
   back: "Zurück",
   evaluating: "Wird ausgewertet ...",

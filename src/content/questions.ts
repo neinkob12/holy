@@ -56,8 +56,8 @@ export const QUESTIONS: Question[] = [
   { id: "N16", text: "Wie bezahlst du?", answers: { chad: "Apple Pay", alpha: "Bargeld aus der Rolle", soy: "Mit Münzen", gooner: "PayPal von Mama" } }
 ];
 
-/** Fragen mit Fotos (gemeinfrei, Quellen in public/img/q/QUELLEN.md). */
-export const IMAGE_QUESTIONS: string[] = ["N15", "Q05", "Q20", "Q03", "Q22"];
+/** Fragen mit Fotos (frei lizenziert, Nachweise in public/img/q/credits.json, öffentlich unter /bildnachweise.html). */
+export const IMAGE_QUESTIONS: string[] = ["N15", "Q05", "Q20", "Q03", "Q22", "A05", "Q02", "Q06", "Q10", "Q16", "Q19", "N06", "N09"];
 
 for (const q of QUESTIONS) {
   if (IMAGE_QUESTIONS.includes(q.id)) {
