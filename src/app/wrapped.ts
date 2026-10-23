@@ -2,7 +2,7 @@ import { TYPE_KEYS, type TypeKey } from "../../shared/score";
 import type { ResultView } from "../../shared/view";
 import { S } from "../content/strings";
 import { TYPES } from "../content/results";
-import { ICON, app, esc, stage, sweep, toast } from "./dom";
+import { ICON, app, esc, setScene, stage, sweep, toast } from "./dom";
 import { readResult } from "./api";
 import { copyLink, shareLink, shareStory } from "./share";
 
@@ -81,6 +81,7 @@ export function showWrapped(view: ResultView, onRestart: () => void): void {
   app().dataset.type = v.type;
 
   const paint = (withSweep: boolean) => {
+    setScene(s + 1);
     const bars = Array.from({ length: N }, (_, i) => `<i class="${i <= s ? "done" : ""}"></i>`).join("");
     stage().innerHTML = `<div class="wr" role="button" tabindex="0" aria-label="${S.tapNext}">
       <div class="bars">${bars}</div>

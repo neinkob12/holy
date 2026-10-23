@@ -5,7 +5,7 @@ import type { ResultView } from "../shared/view";
 import { S } from "./content/strings";
 import { TYPES } from "./content/results";
 import { createResult, readResult, recordVisit } from "./app/api";
-import { app, esc, stage, sweep, toast } from "./app/dom";
+import { app, esc, setScene, stage, sweep, toast } from "./app/dom";
 import { getRef, myResults, rememberResult, setRef } from "./app/local";
 import { runQuiz } from "./app/quiz";
 import { showWrapped } from "./app/wrapped";
@@ -25,6 +25,8 @@ function bindModes(): void {
 
 function start(): void {
   delete app().dataset.type;
+  stage();
+  setScene(0);
   stage().innerHTML = `<section class="screen">
     <h1 class="title">${TYPE_KEYS.map(k => `<span class="t ${k}">${TYPES[k].name}${k === "gooner" ? "?" : ""}</span>`).join("")}</h1>
     <p class="small" style="--d:1">${S.startLead}</p>
@@ -39,6 +41,7 @@ async function landing(id: string): Promise<void> {
   if (!view) { history.replaceState(null, "", "/"); start(); return; }
   setRef(id);
   app().dataset.type = view.type;
+  setScene(3);
   stage().innerHTML = `<section class="screen">
     <p class="small">${S.landingLead}</p>
     <p class="huge" style="--delay:.3s">${esc(TYPES[view.type].name)}</p>
@@ -51,6 +54,7 @@ async function play(mode: Mode): Promise<void> {
   delete app().dataset.type;
   sweep();
   const picks = await runQuiz(mode);
+  setScene(5);
   stage().innerHTML = `<section class="screen center"><div class="loading"><div class="spinner"></div><p class="small">${S.evaluating}</p></div></section>`;
   const ref = getRef();
   const [created] = await Promise.all([createResult(picks, ref), new Promise(r => setTimeout(r, 1200))]);
