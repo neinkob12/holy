@@ -24,9 +24,9 @@ export function runQuiz(mode: Mode): Promise<TypeKey[]> {
         </div>
         <div class="qbody">
           <h2 class="qtext">${esc(q.text)}</h2>
-          <div class="answers${q.images ? " tiles" : ""}">${orders[i].map((k, j) => q.images
+          <div class="answers">${orders[i].map((k, j) => q.images
             ? `<button class="answer tile" data-pick="${k}" style="--i:${j}"><img src="${q.images[k]}" alt="" loading="eager" decoding="async"><span>${esc(q.answers[k])}</span></button>`
-            : `<button class="answer" data-pick="${k}" style="--i:${j}">${esc(q.answers[k])}</button>`).join("")}</div>
+            : `<button class="answer tile text" data-pick="${k}" style="--i:${j}"><span>${esc(q.answers[k])}</span></button>`).join("")}</div>
         </div>
       </section>`;
       busy = false;
